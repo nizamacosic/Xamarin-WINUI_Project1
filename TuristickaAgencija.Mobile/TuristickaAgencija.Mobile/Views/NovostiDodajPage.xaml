@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:TuristickaAgencija.Mobile.Converters"
+             mc:Ignorable="d"
+             x:Class="TuristickaAgencija.Mobile.Views.NovostiDodajPage">
+    <ContentPage.Resources>
+        <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView><StackLayout Padding="20">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Naslov:"></Label>
+                <Entry Text="{Binding Novost.Naslov}"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Sadrzaj:"></Label>
+                <Editor Text="{Binding Novost.Sadrzaj}" HeightRequest="100"></Editor>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Putovanje:"></Label>
+                <Picker ItemsSource="{Binding ListPutovanja}" ItemDisplayBinding="{Binding Naziv}" SelectedItem="{Binding Putovanje}"></Picker>
+            </StackLayout>
+            <StackLayout>
+                <Image Source="{Binding Slika,Converter={StaticResource imgConv}}"></Image>
+
+                <Button Text="Odaberi sliku..." Clicked="Button_Clicked_1"></Button>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Sačuvaj" Clicked="Button_Clicked"></Button>
+                <Label Text="..." IsVisible="{Binding IsBusy}"></Label>
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

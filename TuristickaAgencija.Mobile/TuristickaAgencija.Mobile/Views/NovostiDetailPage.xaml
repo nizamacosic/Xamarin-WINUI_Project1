@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:TuristickaAgencija.Mobile.Converters"
+             mc:Ignorable="d"
+             x:Class="TuristickaAgencija.Mobile.Views.NovostiDetailPage">
+    <ContentPage.Resources>
+        <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10" Margin="5">
+
+                <Label x:Name="Naslov" Text="{Binding Novost.Naslov}" FontSize="Subtitle" FontAttributes="Bold" HorizontalTextAlignment="Center" ></Label>
+                <Image Source="{Binding Novost.Slika,Converter={StaticResource imgConv}}" ></Image>
+                <!--<Image x:Name="noimage"  Source="noimage.png" IsVisible="False"></Image>--> 
+                <Entry Placeholder="Putovanje" Text="{Binding Novost.Putovanje}" IsReadOnly="True"></Entry>
+
+                <Editor   Text="{Binding Novost.Sadrzaj}" HeightRequest="120"  IsReadOnly="True"   ></Editor>
+                <DatePicker x:Name="DatumVrijeme" Date="{Binding Novost.DatumVrijeme}" IsEnabled="False"></DatePicker>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Uredio:" FontAttributes="Italic" Padding="10,5,0,0" HorizontalTextAlignment="End"></Label>
+                    <Label x:Name="Zaposlenik" Padding="0,0,20,0" Text="{Binding Novost.Zaposlenik}" FontAttributes="Italic" TextDecorations="Underline" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"></Label>
+                </StackLayout>
+
+                <!--<Button Text="Sačuvaj" HorizontalOptions="FillAndExpand" BackgroundColor="#0DA75B" TextColor="White" Clicked="Button_Clicked"></Button>-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

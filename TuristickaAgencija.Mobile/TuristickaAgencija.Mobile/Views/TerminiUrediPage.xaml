@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:TuristickaAgencija.Mobile.Converters"
+             mc:Ignorable="d"
+             x:Class="TuristickaAgencija.Mobile.Views.TerminiUrediPage">
+    <ContentPage.Resources>
+        <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Padding="10">
+            <Label Text="{Binding TerminPutovanja.TerminPutovanjaPodaci }"  HorizontalOptions="CenterAndExpand" FontSize="Subtitle"></Label>
+            <Image Source="{Binding TerminPutovanja.Slika,Converter={StaticResource imgConv}}"></Image>
+
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
+                <Label Text="Vrijeme putovanja:"></Label>
+                <Entry Text="{Binding TerminPutovanja.DatumPolaska}" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
+                <Entry Text="{Binding TerminPutovanja.DatumPovratka }" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+            <Label Text="Broj mjesta:" Padding="5"></Label>
+                <Entry Text="{Binding TerminPutovanja.BrojMjesta }" HorizontalOptions="FillAndExpand"></Entry>
+            </StackLayout >
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Smjestaj" Padding="5"></Label>
+                <Entry Text="{Binding TerminPutovanja.Smjestaj, StringFormat='Smjestaj: {0:F2} '}" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
+
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Cijena:" Padding="5"></Label>
+                <Entry Text="{Binding TerminPutovanja.Cijena}" HorizontalOptions="FillAndExpand"></Entry>
+            </StackLayout>
+
+           
+            <!--<Picker ItemsSource="{Binding listSmjestaj}" ItemDisplayBinding="{Binding Naziv}" SelectedItem=""></Picker>-->
+            <!--<Entry Text="{Binding TerminPutovanja.Cijena, StringFormat='Cijena: {0:F2}' }"></Entry>-->
+            <Button Clicked="Button_Clicked" Margin="0,20,0,0" Text="Sačuvaj izmjene" HorizontalOptions="FillAndExpand" BackgroundColor="#0DA75B" TextColor="White"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

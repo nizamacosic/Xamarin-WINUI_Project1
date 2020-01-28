@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TuristickaAgencija.Mobile.Views.RezervacijePage">
+    <ContentPage.Content>
+        <!--<ScrollView>-->
+
+            <StackLayout>
+                <ListView ItemsSource="{Binding ListRezervacije}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <StackLayout Padding="15" BackgroundColor="LightBlue" Margin="10">
+                                    <Label Text="{Binding PutovanjePodaci}"
+                             
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                    <Label Text="{Binding TerminPutovanjaPodaci}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="15" />
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Vrijeme rezervacije: "></Label>
+                                        <Label Text="{Binding Vrijeme}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="15" />
+                                       
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+
+                </ListView>
+          
+        </StackLayout>
+        <!--</ScrollView>-->
+    </ContentPage.Content>
+</ContentPage>

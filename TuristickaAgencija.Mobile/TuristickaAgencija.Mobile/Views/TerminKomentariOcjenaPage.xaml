@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TuristickaAgencija.Mobile.Views.TerminKomentariOcjenaPage">
+    <ContentPage.Content>
+       
+            <ScrollView>
+
+                <StackLayout Orientation="Vertical" Padding="20">
+                    
+                    <Label Text="{Binding Putovanje.Putovanje}" FontSize="18" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Broj noćenja:" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding Putovanje.VrstaPutovanja}" FontSize="14"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Ocjena korisnika :"  FontSize="15"></Label>
+                    <Label  Text="{Binding ProsjecnaOcjena}"  FontSize="18" FontAttributes="Bold"  ></Label>
+                </StackLayout>
+                <StackLayout Margin="0,10,0,0">
+                    <Label Text="KOMENTARI" FontSize="13" HorizontalOptions="Center"></Label>
+                    <ListView ItemsSource="{Binding ListKomentari}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="10" BackgroundColor="LightBlue">
+
+                                        <Label Text="{Binding Sadrzaj}"
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Korisnik:" FontSize="13"></Label>
+                                            <Label Text="{Binding PutnikKorisnik}" FontAttributes="Italic"
+                                 d:Text="Item descripton"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="15" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Vrijeme:" FontSize="13"></Label>
+                                            <Label Text="{Binding Vrijeme}" 
+                                 d:Text="Item descripton"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="15" FontAttributes="Italic" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackLayout>
+                        <Button Text="Ostavi komentar..." Clicked="Button_Clicked"></Button>
+                    </StackLayout>
+                </StackLayout>
+                <!--<StackLayout Orientation="Vertical">
+                    <Label Text="Ostavite komentar:" FontAttributes="Italic"></Label>
+                    <Editor Text="{Binding KomentarSadrzaj}" HeightRequest="100"></Editor>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Vaša ocjena:" FontAttributes="Italic"></Label>
+                    <Picker ItemsSource="{Binding Ocjena}"></Picker>
+                </StackLayout>
+                <StackLayout Padding="20">
+                    <Button Text="OK" Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" ></Button>
+                </StackLayout>-->
+            </StackLayout>
+         
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
