@@ -8,6 +8,7 @@ namespace TuristickaAgencija.WebAPI.Database
         public PutniciKorisnici()
         {
             Komentari = new HashSet<Komentari>();
+            Obavijesti = new HashSet<Obavijesti>();
             OcjenePutovanja = new HashSet<OcjenePutovanja>();
             Pretplate = new HashSet<Pretplate>();
             Rezervacije = new HashSet<Rezervacije>();
@@ -25,6 +26,7 @@ namespace TuristickaAgencija.WebAPI.Database
         public PutniciKorisnici PutnikKorisnik { get; set; }
         public PutniciKorisnici InversePutnikKorisnik { get; set; }
         public ICollection<Komentari> Komentari { get; set; }
+        public ICollection<Obavijesti> Obavijesti { get; set; }
         public ICollection<OcjenePutovanja> OcjenePutovanja { get; set; }
         public ICollection<Pretplate> Pretplate { get; set; }
         public ICollection<Rezervacije> Rezervacije { get; set; }

@@ -21,7 +21,7 @@
                 <Button Text="Učitaj sliku..." Clicked="Button_Clicked_1"></Button>
                 <!--<Entry Placeholder="Putovanje" Text="{Binding Novost.Putovanje}" IsReadOnly="True"></Entry>-->
 
-                <Picker ItemsSource="{Binding listPutovanja}" ItemDisplayBinding="{Binding Naziv}" SelectedItem="{Binding PutovanjeSelected}" ></Picker>
+                <Picker x:Name="P" ItemsSource="{Binding listPutovanja}" ItemDisplayBinding="{Binding Naziv}" SelectedItem="{Binding PutovanjeSelected}" ></Picker>
 
                 <Editor   Text="{Binding Novost.Sadrzaj}" HeightRequest="100"></Editor>
                  <DatePicker x:Name="DatumVrijeme" Date="{Binding Novost.DatumVrijeme}"></DatePicker>

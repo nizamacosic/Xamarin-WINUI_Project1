@@ -23,7 +23,8 @@
                 <Label Text="Putovanje:"></Label>
                 <Picker ItemsSource="{Binding ListPutovanja}" ItemDisplayBinding="{Binding Naziv}" SelectedItem="{Binding Putovanje}"></Picker>
             </StackLayout>
-            <StackLayout>
+         
+                <StackLayout>
                 <Image Source="{Binding Slika,Converter={StaticResource imgConv}}"></Image>
 
                 <Button Text="Odaberi sliku..." Clicked="Button_Clicked_1"></Button>

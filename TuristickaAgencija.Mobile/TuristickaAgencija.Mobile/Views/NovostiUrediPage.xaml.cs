@@ -31,7 +31,8 @@ namespace TuristickaAgencija.Mobile.Views
             base.OnAppearing();
            
             await model.Init();
-            
+            this.P.SelectedItem = model.listPutovanja.FirstOrDefault(s => s.PutovanjaId == model.Novost.PutovanjeId);
+
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {

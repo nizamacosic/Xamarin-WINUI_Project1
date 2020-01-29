@@ -14,7 +14,7 @@ namespace TuristickaAgencija.Mobile.ViewModels
         public NovostiViewModel()
         {
             InitCommand = new Command(async () =>await Init());
-            InitCommand = new Command(async () =>await Init());
+            
         }
         private readonly APIService _service = new APIService("Novosti");
         public ObservableCollection<Novosti> NovostiList { get; set; } = new ObservableCollection<Novosti>();

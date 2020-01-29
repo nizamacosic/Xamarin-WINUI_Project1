@@ -22,6 +22,15 @@ namespace TuristickaAgencija.Mobile.ViewModels
         }
         public Novosti Novost { get; set; } = new Novosti();
 
+
+
+        private Putovanja _put=null;
+        public Putovanja Putovanje
+        {
+            get { return _put; }
+            set { SetProperty(ref _put, value); }
+        }
+
         private byte[] _slika;
         public byte[] Slika
         {
@@ -31,7 +40,11 @@ namespace TuristickaAgencija.Mobile.ViewModels
 
         readonly APIService _serviceNovosti = new APIService("Novosti");
         readonly APIService _servicePutovanja = new APIService("Putovanja");
+        readonly APIService _servicePretplate = new APIService("Pretplate");
+        readonly APIService _servicePutnici = new APIService("PutniciKorisnici");
+        readonly APIService _serviceVrste = new APIService("PutniciKorisnici");
         public ObservableCollection<Putovanja> ListPutovanja { get; set; } = new ObservableCollection<Putovanja>();
+
         public ICommand InitCommand { get; set; }
         public ICommand DodajCommand { get; set; }
         public async Task Init()
@@ -42,6 +55,8 @@ namespace TuristickaAgencija.Mobile.ViewModels
             {
                 ListPutovanja.Add(i);
             }
+
+           
         }
         public async Task Dodaj()
         {
@@ -49,6 +64,8 @@ namespace TuristickaAgencija.Mobile.ViewModels
 
             var zaposlenikid = 0;
             APIService _apiZaposlenici = new APIService("Zaposlenici");
+            APIService _apiObavijesti = new APIService("Obavijesti");
+       
             var zaposlenici = await _apiZaposlenici.Get<List<Zaposlenici>>(null);
             foreach(var i in zaposlenici)
             {
@@ -58,16 +75,48 @@ namespace TuristickaAgencija.Mobile.ViewModels
                     break;
                 }
             }
-            await _serviceNovosti.Insert<Novosti>(new NovostiInsertRequest
+            var insert = new NovostiInsertRequest()
             {
                 DatumVrijeme = DateTime.Now,
-                Naslov=Novost.Naslov,
-                Sadrzaj=Novost.Sadrzaj,
-                PutovanjeId=Novost.PutovanjeId,
-                ZaposlenikId=zaposlenikid,
-                Slika=this.Slika
-                
-            }); 
+                Naslov = Novost.Naslov,
+                Sadrzaj = Novost.Sadrzaj,
+                PutovanjeId = Novost.PutovanjeId,
+                ZaposlenikId = zaposlenikid,
+                Slika = this.Slika
+            };
+            if(Putovanje!=null)
+            {
+                insert.PutovanjeId = Putovanje.PutovanjaId;
+            }
+
+            Putovanja putovanje = null;
+            if (insert.PutovanjeId.HasValue)
+            {
+                putovanje = await _servicePutovanja.GetById<Putovanja>(insert.PutovanjeId);
+            }
+            var entity = await _serviceNovosti.Insert<Novosti>(insert);
+
+            if (putovanje != null)
+            {
+                if (entity != null && putovanje.VrstaPutovanjaId.HasValue)
+                {
+                    var pretplate = await _servicePretplate.Get<List<Pretplate>>(new PretplateSearchRequest
+                    {
+                        VrstaPutovanjaId = putovanje.VrstaPutovanjaId
+                    });
+
+                    foreach (var i in pretplate)
+                    {
+                        await _apiObavijesti.Insert<Obavijesti>(new ObavijestiInsertRequest
+                        {
+                            IsProcitano = false,
+                            Vrijeme = DateTime.Now,
+                            NovostId = entity.NovostId,
+                            PutnikKorisnikId = i.PutnikKorisnikId
+                        });
+                    }
+                }
+            }
         }
 
     }

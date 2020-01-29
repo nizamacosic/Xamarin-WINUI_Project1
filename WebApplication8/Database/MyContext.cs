@@ -19,6 +19,7 @@ namespace TuristickaAgencija.WebAPI.Database
         public virtual DbSet<Gradovi> Gradovi { get; set; }
         public virtual DbSet<Komentari> Komentari { get; set; }
         public virtual DbSet<Novosti> Novosti { get; set; }
+        public virtual DbSet<Obavijesti> Obavijesti { get; set; }
         public virtual DbSet<Ocjene> Ocjene { get; set; }
         public virtual DbSet<OcjenePutovanja> OcjenePutovanja { get; set; }
         public virtual DbSet<Pretplate> Pretplate { get; set; }
@@ -135,6 +136,23 @@ namespace TuristickaAgencija.WebAPI.Database
                     .WithMany(p => p.Novosti)
                     .HasForeignKey(d => d.ZaposlenikId)
                     .HasConstraintName("FK_Novosti_Zaposlenici");
+            });
+
+            modelBuilder.Entity<Obavijesti>(entity =>
+            {
+                entity.HasKey(e => e.ObavijestId);
+
+                entity.Property(e => e.Vrijeme).HasColumnType("datetime");
+
+                entity.HasOne(d => d.Novost)
+                    .WithMany(p => p.Obavijesti)
+                    .HasForeignKey(d => d.NovostId)
+                    .HasConstraintName("FK_Obavijesti_Novosti");
+
+                entity.HasOne(d => d.PutnikKorisnik)
+                    .WithMany(p => p.Obavijesti)
+                    .HasForeignKey(d => d.PutnikKorisnikId)
+                    .HasConstraintName("FK_Obavijesti_PutniciKorisnici");
             });
 
             modelBuilder.Entity<Ocjene>(entity =>

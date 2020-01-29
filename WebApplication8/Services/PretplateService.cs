@@ -23,6 +23,11 @@ namespace TuristickaAgencija.WebAPI.Services
                 query = query.Where(x => x.PutnikKorisnikId == search.PutnikKorisnikId);
 
             }
+            if (search?.VrstaPutovanjaId.HasValue == true)
+            {
+                query = query.Where(x => x.VrstaPutovanjaId == search.VrstaPutovanjaId);
+
+            }
             query = query.OrderBy(x => x.PretplataId);
             var list = query.ToList();
             return _mapper.Map<List<Model.Pretplate>>(list);

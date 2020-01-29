@@ -117,8 +117,8 @@ namespace TuristickaAgencija
             services.AddScoped<ICRUDService<Model.Uplate, UplateSearchRequest, UplateInsertRequest, UplateInsertRequest>, UplateService>();
             services.AddScoped<ICRUDService<Model.Pretplate, PretplateSearchRequest, PretplateInsertRequest, PretplateInsertRequest>,
             PretplateService>();
-
-          
+            services.AddScoped<ICRUDService<Model.Obavijesti, ObavijestiSearchRequest, ObavijestiInsertRequest, ObavijestiInsertRequest>,
+            ObavijestiService>();
 
             var connection = @"Server=.;Database=IB160082;Trusted_Connection=True;";
             services.AddDbContext<MyContext>(options => options.UseSqlServer(connection));

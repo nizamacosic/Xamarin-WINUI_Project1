@@ -142,8 +142,10 @@ namespace TuristickaAgencija.WebAPI.Mappers
                 a => a.MapFrom(y => new MyContext().PutniciKorisnici.Find(y.PutnikKorisnikId).KorisnickoIme)).ForMember
                 (x => x.VrstaPutovanja, a => a.MapFrom(y => new MyContext().VrstePutovanja.Find(y.VrstaPutovanjaId).Oznaka)).ReverseMap();
 
+            CreateMap<Obavijesti, Model.Obavijesti>().ReverseMap();
+            CreateMap<Obavijesti,ObavijestiInsertRequest>().ReverseMap();
 
-          
+
 
         }
     }

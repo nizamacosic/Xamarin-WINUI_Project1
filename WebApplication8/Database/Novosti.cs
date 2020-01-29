@@ -5,6 +5,11 @@ namespace TuristickaAgencija.WebAPI.Database
 {
     public partial class Novosti
     {
+        public Novosti()
+        {
+            Obavijesti = new HashSet<Obavijesti>();
+        }
+
         public int NovostId { get; set; }
         public string Naslov { get; set; }
         public DateTime DatumVrijeme { get; set; }
@@ -17,5 +22,6 @@ namespace TuristickaAgencija.WebAPI.Database
         public Putovanja Putovanje { get; set; }
         public VrstePutovanja VrstaPutovanja { get; set; }
         public Zaposlenici Zaposlenik { get; set; }
+        public ICollection<Obavijesti> Obavijesti { get; set; }
     }
 }
