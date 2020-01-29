@@ -19,6 +19,7 @@ namespace TuristickaAgencija.WebAPI.Database
         public bool? Aktivno { get; set; }
         public int? SmjestajId { get; set; }
         public double? Cijena { get; set; }
+        public byte[] Slika { get; set; }
 
         public Putovanja Putovanje { get; set; }
         public Smjestaj Smjestaj { get; set; }

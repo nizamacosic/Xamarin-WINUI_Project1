@@ -11,11 +11,11 @@ using Xamarin.Forms.Xaml;
 namespace TuristickaAgencija.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TerminiPage : ContentPage
+    public partial class AktivniTerminiPage : ContentPage
     {
         TerminiViewModel model = null;
         
-        public TerminiPage()
+        public AktivniTerminiPage()
         {
             InitializeComponent();
             BindingContext = model=new TerminiViewModel();
@@ -23,7 +23,7 @@ namespace TuristickaAgencija.Mobile.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            
+            model.Aktivno = true;
             await model.Init();
 
         }
@@ -32,32 +32,10 @@ namespace TuristickaAgencija.Mobile.Views
         {
             var item = e.SelectedItem as TerminiPutovanja;
 
-            //provjeri da li je zaposlenik 
-            bool z = false;
-            APIService _service = new APIService("Zaposlenici");
-            List<Zaposlenici> zaposlenici = await _service.Get<List<Zaposlenici>>(null);
-            foreach (var i in zaposlenici)
-            {
-                if (i.KorisnickoIme == APIService.KorisnickoIme)
-                {
-                    z = true;
-                }
-            }
-            if (z == true)
-            { 
-                await Navigation.PushAsync(new TerminiUrediPage(item)); 
-            }
-            else
-            {
-                await Navigation.PushAsync(new TerminiDetailPage(item));
+            await Navigation.PushAsync(new TerminiDetailPage(item));
 
-            }
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            
-            await model.Init();
-        }
+     
     }
 }

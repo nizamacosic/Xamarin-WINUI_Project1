@@ -47,7 +47,7 @@ namespace TuristickaAgencija.WinUI.Zaposlenici
             {
                 var fileName = openFileDialog1.FileName;
                 var file = File.ReadAllBytes(fileName);
-                request.Slika = file;
+                
                 txtSlika.Text = fileName;
                 Image image = Image.FromFile(fileName);
                 pictureBox1.Image = image;

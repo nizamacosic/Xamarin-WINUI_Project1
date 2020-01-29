@@ -11,35 +11,26 @@ using Xamarin.Forms.Xaml;
 namespace TuristickaAgencija.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NovostiPage : ContentPage
+    public partial class PutnikNovostiPage : ContentPage
     {
         NovostiViewModel model = null;
-        public NovostiPage()
+        public PutnikNovostiPage()
         {
             InitializeComponent();
-            BindingContext = model=new NovostiViewModel();
-
+            BindingContext = model = new NovostiViewModel();
         }
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             await model.Init();
-
         }
-
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as Novosti;
 
-                await Navigation.PushAsync(new NovostiUrediPage(item));
-          
-       
-            
-        }
+            await Navigation.PushAsync(new NovostiDetailPage(item));
 
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new NovostiDodajPage());
         }
     }
 }

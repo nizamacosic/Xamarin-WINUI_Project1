@@ -101,6 +101,8 @@
   <ItemGroup>
     <Content Include="addd.png" />
     <Content Include="comm1.png" />
+    <Content Include="confirm.png" />
+    <Content Include="confirm2.png" />
     <Content Include="logo.png" />
     <Content Include="noimage.png" />
     <Content Include="Picture2.png" />

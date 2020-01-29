@@ -25,7 +25,7 @@ namespace TuristickaAgencija.Mobile.Views
                 new HomeMenuItem {Id = MenuItemType.Rezervacije, Title="Rezervacije" },
                 new HomeMenuItem {Id = MenuItemType.Uplate, Title="Uplate" },
                 new HomeMenuItem {Id = MenuItemType.MojProfil, Title="Moj profil" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
+                new HomeMenuItem {Id = MenuItemType.Odjava, Title="Odjavi se" },
             };
 
             ListViewMenu.ItemsSource = menuItems;

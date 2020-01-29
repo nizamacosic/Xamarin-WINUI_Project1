@@ -13,7 +13,8 @@
         <ScrollView>
         <StackLayout Padding="10">
             <Label Text="{Binding TerminPutovanja.TerminPutovanjaPodaci }"  HorizontalOptions="CenterAndExpand" FontSize="Subtitle"></Label>
-            <Image Source="{Binding TerminPutovanja.Slika,Converter={StaticResource imgConv}}"></Image>
+                <Image Source="{Binding Slika,Converter={StaticResource imgConv}}"></Image>
+                <Button Text="Učitaj sliku..." Clicked="Button_Clicked_1"></Button>
 
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
                 <Label Text="Vrijeme putovanja:"></Label>

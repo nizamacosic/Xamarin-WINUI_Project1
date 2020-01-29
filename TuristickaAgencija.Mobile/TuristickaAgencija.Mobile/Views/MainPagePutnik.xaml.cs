@@ -34,11 +34,10 @@ namespace TuristickaAgencija.Mobile.Views
                         MenuPages.Add(id, new NavigationPage(new PocetnaPage()));
                         break;
                     case (int)MenuItemTypeP.Termini:
-                        MenuPages.Add(id, new NavigationPage(new TerminiPage()));
+                        MenuPages.Add(id, new NavigationPage(new AktivniTerminiPage()));
                         break;
-
                     case (int)MenuItemTypeP.Novosti:
-                        MenuPages.Add(id, new NavigationPage(new NovostiPage()));
+                        MenuPages.Add(id, new NavigationPage(new PutnikNovostiPage()));
                         break;
                     case (int)MenuItemTypeP.Rezervacije:
                         MenuPages.Add(id, new NavigationPage(new AktuelneRezervacijePage()));
@@ -58,8 +57,8 @@ namespace TuristickaAgencija.Mobile.Views
                     case (int)MenuItemTypeP.Obavijesti:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
-                    case (int)MenuItemTypeP.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                    case (int)MenuItemTypeP.Odjava:
+                        MenuPages.Add(id, new NavigationPage(new OdjavaPage()));
                         break;
                 }
             }

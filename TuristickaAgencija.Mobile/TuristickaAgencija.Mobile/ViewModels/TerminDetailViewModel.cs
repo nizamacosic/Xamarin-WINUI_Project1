@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -17,11 +18,21 @@ namespace TuristickaAgencija.Mobile.ViewModels
             InitCommand = new Command(async () => await Init());
             UrediCommand = new Command(async () => await Uredi());
             RezervisiCommand = new Command(async () => await Rezervisi());
+            byte[] defaultPhoto = File.ReadAllBytes("noimage.png");
+
         }
         public TerminiPutovanja TerminPutovanja { get; set; }
 
         public ObservableCollection<Vodici> ListVodici { get; set; } = new ObservableCollection<Vodici>();
         public ObservableCollection<FakultativniIzleti> ListIzleti { get; set; } = new ObservableCollection<FakultativniIzleti>();
+
+
+        private byte[] _slika;
+        public byte[] Slika
+        {
+            get { return _slika; }
+            set { SetProperty(ref _slika, value); }
+        }
 
         double _ocjena = 0;
         public double Ocjena
@@ -100,16 +111,20 @@ namespace TuristickaAgencija.Mobile.ViewModels
         }
         public async Task Uredi()
         {
+
             var list = await _terminiService.Update<TerminiPutovanja>(TerminPutovanja.TerminPutovanjaId,
                 new TerminiPutovanjaInsertRequest()
                 {
-                    Aktivno = TerminPutovanja.Aktivno,
+                    Aktivno = TerminPutovanja.Aktivno, //popravi
                     BrojMjesta = TerminPutovanja.BrojMjesta,
                     Cijena = TerminPutovanja.Cijena,
                     DatumPolaska = TerminPutovanja.DatumPolaska,
                     DatumPovratka = TerminPutovanja.DatumPovratka,
                     PutovanjeId = TerminPutovanja.PutovanjeId,
-                    SmjestajId = TerminPutovanja.SmjestajId
+                    SmjestajId = TerminPutovanja.SmjestajId,
+                    Slika=this.Slika,
+                    
+                    
                 });
 
            
@@ -119,7 +134,7 @@ namespace TuristickaAgencija.Mobile.ViewModels
         {
             var korisnicko = APIService.KorisnickoIme;
             APIService _putniciService = new APIService("PutniciKorisnici");
-            var putnici = await _putniciService.Get<List<Model.PutniciKorisnici>>(null);
+            var putnici = await _putniciService.Get<List<PutniciKorisnici>>(null);
             foreach(var putnik in putnici)
             {
                 if(putnik.KorisnickoIme==korisnicko)

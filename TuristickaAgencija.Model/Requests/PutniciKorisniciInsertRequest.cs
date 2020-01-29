@@ -10,7 +10,6 @@ namespace TuristickaAgencija.Model.Requests
         public string Prezime { get; set; }
         public string Email { get; set; }
         public string Kontakt { get; set; }
-        public int? GradId { get; set; }
         public string KorisnickoIme { get; set; }
         public string Password { get; set; }
 

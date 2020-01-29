@@ -15,7 +15,8 @@ namespace TuristickaAgencija.Mobile.Models
         Preplate,
         MojProfil,
         Obavijesti,
-        About,
+        Odjava
+       
 
     }
     public class HomeMenuItemPutnik

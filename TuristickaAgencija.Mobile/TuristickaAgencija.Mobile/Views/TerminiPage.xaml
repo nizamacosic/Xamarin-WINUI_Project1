@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ViewModels="clr-namespace:TuristickaAgencija.Mobile.ViewModels"
+             xmlns:converters="clr-namespace:TuristickaAgencija.Mobile.Converters"
+             mc:Ignorable="d"
+             x:Class="TuristickaAgencija.Mobile.Views.TerminiPage">
+    <ContentPage.Resources>
+        <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <StackLayout Orientation="Horizontal" Padding="5" >
+                <Picker ItemsSource="{Binding ListAktivno}" ItemDisplayBinding="{Binding Aktivno}" SelectedItem="{Binding AktivniTermin}" HorizontalOptions="FillAndExpand"></Picker>
+                <Button ImageSource="confirm2.png" BackgroundColor="White" Clicked="Button_Clicked" HeightRequest="40" WidthRequest="50"></Button>
+            </StackLayout>
+            <ListView ItemsSource="{Binding TerminiList}" ItemSelected="ListView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+
+                                    <Label Text="{Binding TerminPutovanjaPodaci}"
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Cijena:" FontSize="15"></Label>
+                                        <Label Text="{Binding Cijena}" 
+                                 d:Text="Item descripton"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    </StackLayout>
+                                    <Image Source="{Binding Slika,Converter={StaticResource imgConv}}"></Image>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

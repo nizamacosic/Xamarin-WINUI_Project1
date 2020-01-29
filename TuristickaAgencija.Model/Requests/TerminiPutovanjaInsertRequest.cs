@@ -13,5 +13,7 @@ namespace TuristickaAgencija.Model.Requests
         public bool? Aktivno { get; set; }
         public int? SmjestajId { get; set; }
         public double? Cijena { get; set; }
+        public byte[] Slika { get; set; }
+
     }
 }

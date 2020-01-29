@@ -21,7 +21,7 @@ namespace TuristickaAgencija.Mobile.Views
 
             menuItems = new List<HomeMenuItemPutnik>
             {
-                new HomeMenuItemPutnik {Id = MenuItemTypeP.Pocetna, Title="Pocetna" },
+               
                 new HomeMenuItemPutnik {Id = MenuItemTypeP.Termini, Title="Termini" },
                 new HomeMenuItemPutnik {Id = MenuItemTypeP.Novosti, Title="Novosti" },
                 new HomeMenuItemPutnik {Id = MenuItemTypeP.Rezervacije, Title="Moje rezervacije" },
@@ -30,9 +30,8 @@ namespace TuristickaAgencija.Mobile.Views
                 new HomeMenuItemPutnik {Id = MenuItemTypeP.Preplate, Title="Pretplate" },
                 new HomeMenuItemPutnik {Id = MenuItemTypeP.MojProfil, Title="Moj profil" },
                 new HomeMenuItemPutnik {Id = MenuItemTypeP.Obavijesti, Title="Obavijesti" },
+                new HomeMenuItemPutnik {Id = MenuItemTypeP.Odjava, Title="Odjavi se" },
           
-
-                new HomeMenuItemPutnik {Id = MenuItemTypeP.About, Title="About" },
                 //new HomeMenuItem {Id = MenuItemType.About, Title="About" },
 
             };

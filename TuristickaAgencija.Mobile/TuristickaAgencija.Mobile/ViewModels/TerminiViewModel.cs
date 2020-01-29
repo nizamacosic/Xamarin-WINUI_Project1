@@ -25,18 +25,39 @@ namespace TuristickaAgencija.Mobile.ViewModels
         }
         public ObservableCollection<TerminiPutovanja> TerminiList { get; set; } = new ObservableCollection<TerminiPutovanja>();
         readonly APIService _service = new APIService("TerminiPutovanja");
+        public ObservableCollection<AktivniTermini> ListAktivno { get; set; } = new ObservableCollection<AktivniTermini>();
+
+        AktivniTermini _aktivnitermin;
+        public AktivniTermini AktivniTermin
+        {
+            get { return _aktivnitermin; }
+            set { SetProperty(ref _aktivnitermin, value); }
+        }
+
         public ICommand InitCommand { get; set; }
 
         public async Task Init()
         {
-            
-            var search = new TerminiSearchRequest { Aktivno = true }; 
+         
+            var search = new TerminiSearchRequest();
+            if (AktivniTermin==null)
+            {
+                search.Aktivno = true;
+            }
+             else
+            {
+                search.Aktivno = AktivniTermin.IsAktivno;
+            }
             var list = await _service.Get<IEnumerable<TerminiPutovanja>>(search);
             TerminiList.Clear();
             foreach (var novost in list)
             {
                 TerminiList.Add(novost);
             }
+
+            ListAktivno.Clear();
+            ListAktivno.Add(new AktivniTermini { IsAktivno = true, Aktivno = "Aktivno" });
+            ListAktivno.Add(new AktivniTermini { IsAktivno = false, Aktivno = "Neaktivno" });
         }
 
     }

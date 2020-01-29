@@ -95,7 +95,7 @@ namespace TuristickaAgencija.Mobile.ViewModels
                 { var put = await _putovanja.GetById<Putovanja>(novost.PutovanjeId);
                     PutovanjeSelected = put;
                     insert.PutovanjeId = PutovanjeSelected.PutovanjaId;
-            }
+                  }
 
             }
 

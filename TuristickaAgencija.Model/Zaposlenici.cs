@@ -11,7 +11,7 @@ namespace TuristickaAgencija.Model
         public string Prezime { get; set; }
         public string Kontakt { get; set; }
         public string Email { get; set; }
-        public byte[] Slika { get; set; }
+ 
         public string KorisnickoIme { get; set; }
         public string LozinkaHash { get; set; }
         public string LozinkaSalt { get; set; }

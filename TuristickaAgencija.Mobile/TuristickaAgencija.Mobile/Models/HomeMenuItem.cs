@@ -12,6 +12,7 @@ namespace TuristickaAgencija.Mobile.Models
         Uplate,
         MojProfil,
         About,
+        Odjava
 
     }
     public class HomeMenuItem

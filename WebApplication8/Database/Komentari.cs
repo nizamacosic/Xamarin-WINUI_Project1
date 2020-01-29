@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 namespace TuristickaAgencija.WebAPI.Database
-
 {
     public partial class Komentari
     {
