@@ -38,7 +38,7 @@ namespace TuristickaAgencija.Mobile.Views
         {
           
             await model.Uredi(); 
-            await Application.Current.MainPage.DisplayAlert("Vaš 'Bon Voyage'!", "Uspjesno ste uredili podatke!", "OK");
+            await Application.Current.MainPage.DisplayAlert("Vaš 'Bon Voyage'!", "Uspješno ste uredili podatke!", "OK");
             await Navigation.PushAsync(new NovostiPage());
         }
 
@@ -46,7 +46,7 @@ namespace TuristickaAgencija.Mobile.Views
         {
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
-                await DisplayAlert("", "Format slike nije podrzan!", "OK");
+                await DisplayAlert("", "Format slike nije podržan!", "OK");
                 return;
             }
             var file = await CrossMedia.Current.PickPhotoAsync();

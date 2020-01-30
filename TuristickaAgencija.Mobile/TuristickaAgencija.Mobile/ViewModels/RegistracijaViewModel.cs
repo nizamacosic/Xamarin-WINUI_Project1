@@ -16,27 +16,17 @@ namespace TuristickaAgencija.Mobile.ViewModels
         public RegistracijaViewModel()
         {
             RegistrationCommand = new Command(async () => await Registration());
-            InitCommand = new Command(async () => await Init());
+       
         }
 
 
         public ICommand RegistrationCommand { get; set; }
-        public ICommand InitCommand { get; set; }
-
-        public ObservableCollection<Gradovi> ListGradovi { get; set; } = new ObservableCollection<Gradovi>();
+    
 
         private readonly APIService _service = new APIService("PutniciKorisnici");
-        private readonly APIServiceGrad _serviceGradovi = new APIServiceGrad("Gradovi");
+   
 
-        public async Task Init()
-        {
-            var gradovi = await _serviceGradovi.Get<List<Model.Gradovi>>(null);
-            ListGradovi.Clear();
-            foreach (var i in gradovi)
-            {
-                ListGradovi.Add(i);
-            }
-        }
+   
         public async Task Registration()
         {
             IsBusy = true;
@@ -69,7 +59,7 @@ namespace TuristickaAgencija.Mobile.ViewModels
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Vaš 'Bon Voyage'", "Pokušajte koristiti drugo korisnicko ime!", "OK");
+                await Application.Current.MainPage.DisplayAlert("Vaš 'Bon Voyage'", "Pokušajte koristiti drugo korisničko ime!", "OK");
                 
             }
             Application.Current.MainPage = new LoginPage();

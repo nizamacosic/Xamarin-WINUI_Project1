@@ -26,14 +26,6 @@ namespace TuristickaAgencija.Mobile.Views
             await model.Init();
         }
 
-        //private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    var item = e.SelectedItem as TerminiPutovanja;
-        //    await Navigation.PushAsync(new TerminiDetailPage(item));
-        //}
-
-
-
         private void Button_Clicked(object sender, EventArgs e)
         {
             var button = sender as Button;

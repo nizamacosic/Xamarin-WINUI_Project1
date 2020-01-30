@@ -61,18 +61,19 @@ namespace TuristickaAgencija.Mobile.ViewModels
             APIService _serviceRezervacije = new APIService("Rezervacije");
 
             var uplate = await _serviceUplate.Get<List<Uplate>>(null);
-
+            int brojUplata = 0;
                 foreach (var i in uplate)
                 {
                     var rez = await _serviceRezervacije.GetById<Rezervacije>(i.RezervacijaId);
                     if (rez.PutnikKorisnikId == putnikID)
                     {
                         PlacenoSuma += i.Iznos;
+                        brojUplata++;
                     }
 
                 }
             
-            BrojUplata = uplate.Count;
+            BrojUplata = brojUplata;
             APIService _serviceTermini = new APIService("TerminiPutovanja");
 
 

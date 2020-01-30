@@ -50,9 +50,9 @@ namespace TuristickaAgencija.Mobile.ViewModels
             }
             var list = await _service.Get<IEnumerable<TerminiPutovanja>>(search);
             TerminiList.Clear();
-            foreach (var novost in list)
+            foreach (var i in list)
             {
-                TerminiList.Add(novost);
+                TerminiList.Add(i);
             }
 
             ListAktivno.Clear();

@@ -18,7 +18,7 @@
         </StackLayout>-->
         <StackLayout VerticalOptions="FillAndExpand" Padding="10">
                 <Image Source="logo.png" HeightRequest="250" WidthRequest="250"></Image>
-                <Label Text="Korisnicko ime"/>
+                <Label Text="Korisničko ime"/>
             <Entry Text="{Binding KorisnickoIme}" HorizontalOptions="FillAndExpand"></Entry>
             <Label Text="Lozinka"/>
             <Entry Text="{Binding Lozinka}" HorizontalOptions="FillAndExpand"></Entry>

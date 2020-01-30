@@ -23,7 +23,7 @@ namespace TuristickaAgencija.WebAPI.Services
                 query = query.Where(x => x.PutovanjeId== search.PutovanjeId);
 
             }
-            query = query.OrderBy(x => x.NovostId);
+            query = query.OrderByDescending(x => x.NovostId);
             var list = query.ToList();
             return _mapper.Map<List<Model.Novosti>>(list);
         }

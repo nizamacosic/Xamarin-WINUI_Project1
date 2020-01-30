@@ -16,29 +16,27 @@
                 <Image Source="{Binding Slika,Converter={StaticResource imgConv}}"></Image>
                 <Button Text="Učitaj sliku..." Clicked="Button_Clicked_1"></Button>
 
-            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
+            <StackLayout Orientation="Vertical" Margin="0,20,0,0" >
                 <Label Text="Vrijeme putovanja:"></Label>
                 <Entry Text="{Binding TerminPutovanja.DatumPolaska}" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
                 <Entry Text="{Binding TerminPutovanja.DatumPovratka }" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
             <Label Text="Broj mjesta:" Padding="5"></Label>
                 <Entry Text="{Binding TerminPutovanja.BrojMjesta }" HorizontalOptions="FillAndExpand"></Entry>
             </StackLayout >
-            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
                 <Label Text="Smjestaj" Padding="5"></Label>
                 <Entry Text="{Binding TerminPutovanja.Smjestaj, StringFormat='Smjestaj: {0:F2} '}" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
 
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
                 <Label Text="Cijena:" Padding="5"></Label>
                 <Entry Text="{Binding TerminPutovanja.Cijena}" HorizontalOptions="FillAndExpand"></Entry>
             </StackLayout>
 
-           
-            <!--<Picker ItemsSource="{Binding listSmjestaj}" ItemDisplayBinding="{Binding Naziv}" SelectedItem=""></Picker>-->
-            <!--<Entry Text="{Binding TerminPutovanja.Cijena, StringFormat='Cijena: {0:F2}' }"></Entry>-->
-            <Button Clicked="Button_Clicked" Margin="0,20,0,0" Text="Sačuvaj izmjene" HorizontalOptions="FillAndExpand" BackgroundColor="#0DA75B" TextColor="White"></Button>
+
+            <Button Clicked="Button_Clicked" Margin="0,20,0,0" Text="Sačuvaj izmjene" HorizontalOptions="FillAndExpand" BackgroundColor="LightGreen" TextColor="White"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

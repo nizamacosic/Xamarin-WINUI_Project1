@@ -24,6 +24,7 @@ namespace TuristickaAgencija.Mobile.Views
         {
             base.OnAppearing();
             await model.Init();
+
         }
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -35,8 +36,10 @@ namespace TuristickaAgencija.Mobile.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            
-            await model.Init();
+            if (model.AktivniTermin != null)
+            {
+                await model.Init();
+            }
         }
     }
 }

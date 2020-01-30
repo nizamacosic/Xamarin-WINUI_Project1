@@ -34,8 +34,11 @@
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-                                    </StackLayout>
-                                    <Image Source="{Binding Slika,Converter={StaticResource imgConv}}"></Image>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Image Source="{Binding Slika,Converter={StaticResource imgConv}}" WidthRequest="300"></Image>
+
+                                </StackLayout>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

@@ -42,7 +42,7 @@ namespace TuristickaAgencija.Mobile.Views
                         MenuPages.Add(id, new NavigationPage(new NovostiPage()));
                         break;
                     case (int)MenuItemType.Rezervacije:
-                        MenuPages.Add(id, new NavigationPage(new RezervacijePage()));
+                        MenuPages.Add(id, new NavigationPage(new AdminRezervacijePage()));
                         break;
                     case (int)MenuItemType.Uplate:
                         MenuPages.Add(id, new NavigationPage(new AdminUplatePodaciPage()));

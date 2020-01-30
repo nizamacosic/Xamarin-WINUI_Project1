@@ -18,15 +18,7 @@ namespace TuristickaAgencija.WebAPI.Services
         {
             var query = _db.Set<Database.TerminiPutovanja>().AsQueryable();
 
-            //  -----  AKTIVNO = moguce rezervisati, false- zavrsilo -----
-            
-            foreach(var i in query)
-            {
-                if(i.DatumPolaska<DateTime.Now)
-                {
-                    i.Aktivno = false;
-                }
-            }
+
 
             if (search?.PutovanjeId.HasValue == true && search?.Godina.HasValue == true)
             {
@@ -46,7 +38,7 @@ namespace TuristickaAgencija.WebAPI.Services
                     query = query.Where(x => x.DatumPolaska.Year == search.Godina);
                 }
                 if (search?.Aktivno.HasValue==true)
-                {
+                { 
                     query = query.Where(x => x.Aktivno == search.Aktivno);
                 }
 

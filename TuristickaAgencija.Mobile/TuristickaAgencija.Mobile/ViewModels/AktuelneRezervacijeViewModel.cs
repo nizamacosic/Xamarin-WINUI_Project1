@@ -17,14 +17,12 @@ namespace TuristickaAgencija.Mobile.ViewModels
             InitCommand = new Command(async () => await Init());
             OtkaziCommand = new Command(async () => await Otkazi());
         }
-        public Rezervacije rezervacijaOtkazi { get; set; }
-
-        //bool _sveRezervacije = false;
-        //public bool SveRezervacijePutnik
-        //{
-        //    get { return _sveRezervacije; }
-        //    set { SetProperty(ref _sveRezervacije, value); }
-        //}
+        Rezervacije _rezervacijaOtkazi = null;
+        public Rezervacije rezervacijaOtkazi
+        {
+            get { return _rezervacijaOtkazi; }
+            set { SetProperty(ref _rezervacijaOtkazi, value); }
+        }
 
         bool _rezervacijeMessage = false;
         public bool RezervacijeMessage
@@ -85,11 +83,11 @@ namespace TuristickaAgencija.Mobile.ViewModels
         }
         public async Task Otkazi()
         {
-            // rezervacija se ne moze se otkazati pet dana prije polaska na putovanje
+            // rezervacija se ne moze se otkazati 3 dana prije polaska na putovanje
             APIService _terminService = new APIService("TerminiPutovanja");
             var termin = await _terminService.GetById<TerminiPutovanja>(rezervacijaOtkazi.TerminPutovanjaId);
 
-            if ((DateTime.Now - termin.DatumPolaska).TotalDays > 5)
+            if ((termin.DatumPolaska-DateTime.Now).TotalDays > 3)
             {
                 var response = await Application.Current.MainPage.DisplayAlert("Vaš 'Bon Voyage'", "Da li želite otkazati putovanje?", "DA", "NE");
                 if (response)

@@ -19,6 +19,7 @@ namespace TuristickaAgencija.Mobile.ViewModels
             UrediCommand = new Command(async () => await Uredi());
             RezervisiCommand = new Command(async () => await Rezervisi());
             byte[] defaultPhoto = File.ReadAllBytes("noimage.png");
+            //Slika = defaultPhoto;
 
         }
         public TerminiPutovanja TerminPutovanja { get; set; }
@@ -27,7 +28,7 @@ namespace TuristickaAgencija.Mobile.ViewModels
         public ObservableCollection<FakultativniIzleti> ListIzleti { get; set; } = new ObservableCollection<FakultativniIzleti>();
 
 
-        private byte[] _slika;
+        private byte[] _slika=null;
         public byte[] Slika
         {
             get { return _slika; }
@@ -60,7 +61,7 @@ namespace TuristickaAgencija.Mobile.ViewModels
         readonly APIService _izletiService = new APIService("FakultativniIzleti");
         readonly APIService _izletiPutovanjaService = new APIService("PutovanjaFakultativni");
         readonly APIService _rezervacijeService = new APIService("Rezervacije");
-        readonly APIService _obavijestiService = new APIService("Obavijesti");
+   
 
   
 
@@ -111,21 +112,20 @@ namespace TuristickaAgencija.Mobile.ViewModels
         }
         public async Task Uredi()
         {
-
-            var list = await _terminiService.Update<TerminiPutovanja>(TerminPutovanja.TerminPutovanjaId,
-                new TerminiPutovanjaInsertRequest()
-                {
-                    Aktivno = TerminPutovanja.Aktivno, //popravi
-                    BrojMjesta = TerminPutovanja.BrojMjesta,
-                    Cijena = TerminPutovanja.Cijena,
-                    DatumPolaska = TerminPutovanja.DatumPolaska,
-                    DatumPovratka = TerminPutovanja.DatumPovratka,
-                    PutovanjeId = TerminPutovanja.PutovanjeId,
-                    SmjestajId = TerminPutovanja.SmjestajId,
-                    Slika=this.Slika,
-                    
-                    
-                });
+            var insert = new TerminiPutovanjaInsertRequest()
+            {
+                Aktivno = TerminPutovanja.Aktivno,
+                BrojMjesta = TerminPutovanja.BrojMjesta,
+                Cijena = TerminPutovanja.Cijena,
+                DatumPolaska = TerminPutovanja.DatumPolaska,
+                DatumPovratka = TerminPutovanja.DatumPovratka,
+                PutovanjeId = TerminPutovanja.PutovanjeId,
+                SmjestajId = TerminPutovanja.SmjestajId,
+                Slika = this.Slika,
+            };
+            
+            await _terminiService.Update<TerminiPutovanja>(TerminPutovanja.TerminPutovanjaId, insert);
+                
 
            
 
@@ -148,6 +148,7 @@ namespace TuristickaAgencija.Mobile.ViewModels
             {
                 TerminId = TerminPutovanja.TerminPutovanjaId
             });
+          
             if (TerminPutovanja.BrojMjesta > rezervacije.Count)
             {
                 await _rezervacijeService.Insert<Rezervacije>(new RezervacijeInsertRequest
@@ -156,6 +157,8 @@ namespace TuristickaAgencija.Mobile.ViewModels
                     TerminPutovanjaId = TerminPutovanja.TerminPutovanjaId,
                     Vrijeme = DateTime.Now
                 });
+                await Application.Current.MainPage.DisplayAlert("Vaš 'Bon Voyage'!", "Uspješno ste rezervisali putovanje, SRETAN PUT!", "OK");
+
             }
             else
             {

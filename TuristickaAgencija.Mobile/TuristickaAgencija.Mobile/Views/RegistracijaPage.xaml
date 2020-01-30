@@ -15,12 +15,11 @@
                     <Label Text="Prezime"></Label>
                     <Entry x:Name="Prezime" Text="{ Binding Prezime}"></Entry>
 
-                    <Label Text="Kontakt"></Label>
-                    <Entry x:Name="Kontakt" Text="{ Binding Kontakt}"></Entry>
+                    <Label Text="Kontakt telefon"></Label>
+                    <Entry x:Name="Kontakt" Text="{ Binding Kontakt}" Placeholder="+000 00 000 000"></Entry>
                     <Label Text="Email"></Label>
                     <Entry x:Name="Email" Text="{ Binding Email}"></Entry>
-                    <Label Text="Grad"> </Label>
-                     <Picker ItemsSource="{Binding ListGradovi}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+ 
                     <Label Text="Korisničko ime"></Label>
                     <Entry x:Name="KorisnickoIme" Text="{Binding KorisnickoIme}"></Entry>
                     <Label  Text="Password"></Label>

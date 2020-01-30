@@ -21,7 +21,7 @@ namespace TuristickaAgencija.Mobile.Views
 
             menuItems = new List<HomeMenuItemPutnik>
             {
-               
+                new HomeMenuItemPutnik {Id = MenuItemTypeP.Pocetna, Title="Početna" },
                 new HomeMenuItemPutnik {Id = MenuItemTypeP.Termini, Title="Termini" },
                 new HomeMenuItemPutnik {Id = MenuItemTypeP.Novosti, Title="Novosti" },
                 new HomeMenuItemPutnik {Id = MenuItemTypeP.Rezervacije, Title="Moje rezervacije" },

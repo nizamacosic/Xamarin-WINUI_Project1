@@ -19,12 +19,14 @@ namespace TuristickaAgencija.Mobile.Views
             InitializeComponent();
             BindingContext = model = new TerminDetailViewModel()
             {
-                TerminPutovanja = t
+                TerminPutovanja = t,
+                Slika=t.Slika
             };
         }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
             await model.Init();
 
         }
@@ -36,8 +38,7 @@ namespace TuristickaAgencija.Mobile.Views
             if(res)
             {
                 await model.Rezervisi();
-                await Application.Current.MainPage.DisplayAlert("Vaš 'Bon Voyage'!", "Uspješno ste rezervisali putovanje, SRETAN PUT!","OK");
-
+                await Navigation.PushAsync(new AktivniTerminiPage());
             }
             else
             {

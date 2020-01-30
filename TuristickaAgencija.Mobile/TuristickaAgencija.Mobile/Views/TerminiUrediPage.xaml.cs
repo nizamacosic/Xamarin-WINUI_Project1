@@ -29,7 +29,7 @@ namespace TuristickaAgencija.Mobile.Views
         }
         protected async override void OnAppearing()
         {
-            base.OnAppearing();
+           base.OnAppearing();
            await  model.Init();
         }
 
@@ -44,7 +44,7 @@ namespace TuristickaAgencija.Mobile.Views
         {
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
-                await DisplayAlert("", "Format slike nije podrzan!", "OK");
+                await DisplayAlert("", "Format slike nije podržan!", "OK");
                 return;
             }
             var file = await CrossMedia.Current.PickPhotoAsync();

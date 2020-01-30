@@ -28,7 +28,7 @@ namespace TuristickaAgencija.WebAPI.Services
                 query = query.Where(x => x.PutnikKorisnikId == search.PutnikKorisnikId);
 
             }
-            query = query.OrderBy(x => x.RezervacijaId);
+            query = query.OrderByDescending(x => x.Vrijeme);
             var list = query.ToList();
             return _mapper.Map<List<Model.Rezervacije>>(list);
 

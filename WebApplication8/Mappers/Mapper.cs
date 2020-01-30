@@ -60,8 +60,8 @@ namespace TuristickaAgencija.WebAPI.Mappers
             CreateMap<TerminiPutovanja, Model.TerminiPutovanja>().ForMember(x => x.TerminPutovanjaPodaci
             , a => a.MapFrom(
             y => new MyContext().Putovanja.Find(y.PutovanjeId).Naziv + " | " + y.DatumPolaska.ToString())
-            ).ForMember(x => x.Smjestaj, a => a.MapFrom(y => new MyContext().Smjestaj.Find(y.SmjestajId).Naziv))
-           .ForMember(x => x.Slika, a => a.MapFrom(y => new MyContext().Putovanja.Find(y.PutovanjeId).Slika)).ReverseMap();
+            ).ForMember(x => x.Smjestaj, a => a.MapFrom(y => new MyContext().Smjestaj.Find(y.SmjestajId).Naziv)).ReverseMap();
+          
 
 
 

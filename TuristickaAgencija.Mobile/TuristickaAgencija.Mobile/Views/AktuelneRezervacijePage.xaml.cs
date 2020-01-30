@@ -39,5 +39,6 @@ namespace TuristickaAgencija.Mobile.Views
            
             await Navigation.PushAsync(new RezervacijePage());
         }
+
     }
 }

@@ -51,47 +51,60 @@ namespace TuristickaAgencija.Mobile.ViewModels
 
 
 
-            //kroz sve rezervacije provjeri koja su vrsta putovanja
-            foreach (var vr in listVrste)
+            if (rezervacije.Count > 0)
             {
-                int broj = 0;
-                foreach (var i in rezervacije)
+                foreach (var vr in listVrste)
                 {
-                    var termin = await _terminiService.GetById<TerminiPutovanja>(i.TerminPutovanjaId);
-                    var putovanje = await _putovanjaService.GetById<Putovanja>(termin.PutovanjeId);
-                    var vrsta = await _vrstaPutoavanjaService.GetById<VrstaPutovanja>(putovanje.VrstaPutovanjaId);
-
-                  if(vr.VrstaPutovanjaId==vrsta.VrstaPutovanjaId)
+                    int broj = 0;
+                    foreach (var i in rezervacije)
                     {
-                        broj++;
+                        var termin = await _terminiService.GetById<TerminiPutovanja>(i.TerminPutovanjaId);
+                        var putovanje = await _putovanjaService.GetById<Putovanja>(termin.PutovanjeId);
+                        var vrsta = await _vrstaPutoavanjaService.GetById<VrstaPutovanja>(putovanje.VrstaPutovanjaId);
+
+                        if (vr.VrstaPutovanjaId == vrsta.VrstaPutovanjaId)
+                        {
+                            broj++;
+                        }
+
                     }
-
+                    preporukeList.Add(new Preporuka { VrstaPutovanjaId = vr.VrstaPutovanjaId, BrojRezervacija = broj });
                 }
-                preporukeList.Add(new Preporuka { VrstaPutovanjaId = vr.VrstaPutovanjaId, BrojRezervacija = broj });
-            }
 
-            preporukeList = preporukeList.OrderByDescending(a => a.BrojRezervacija).ToList();
+                preporukeList = preporukeList.OrderByDescending(a => a.BrojRezervacija).ToList();
 
-            //sva putovanja s ovom vrstom putovanja
 
-            var putovanja = await _putovanjaService.Get<List<Putovanja>>(new PutovanjaSearchRequest
-            {
-                VrstaPutovanjaId=preporukeList[0].VrstaPutovanjaId
-            });
-            var vrstaNajPos = await _vrstaPutoavanjaService.GetById<VrstaPutovanja>(preporukeList[0].VrstaPutovanjaId);
-            VrstaPutovanjaOznaka = vrstaNajPos.Oznaka;
 
-            ListPreporuceniTermini.Clear();
-            foreach(var i in putovanja)
-            {
-                var termini = await _terminiService.Get<List<TerminiPutovanja>>(new TerminiSearchRequest
+                var putovanja = await _putovanjaService.Get<List<Putovanja>>(new PutovanjaSearchRequest
                 {
-                    PutovanjeId = i.PutovanjaId,
-                    Aktivno = true
+                    VrstaPutovanjaId = preporukeList[0].VrstaPutovanjaId
                 });
-                foreach (var j in termini)
+                var vrstaNajPos = await _vrstaPutoavanjaService.GetById<VrstaPutovanja>(preporukeList[0].VrstaPutovanjaId);
+                VrstaPutovanjaOznaka = vrstaNajPos.Oznaka;
+
+                ListPreporuceniTermini.Clear();
+                foreach (var i in putovanja)
                 {
-                    ListPreporuceniTermini.Add(j);
+                    var termini = await _terminiService.Get<List<TerminiPutovanja>>(new TerminiSearchRequest
+                    {
+                        PutovanjeId = i.PutovanjaId,
+                        Aktivno = true
+                    });
+                    foreach (var j in termini)
+                    {
+                        if (j.DatumPolaska > DateTime.Now)
+                        {
+                            var rez = await _rezervacijeService.Get<List<Rezervacije>>(new RezervacijeSearchRequest
+                            {
+                                PutnikKorisnikId = putnikId,
+                                TerminId = j.TerminPutovanjaId
+                            });
+                            if (rez.Count == 0)
+                            {
+                                ListPreporuceniTermini.Add(j);
+                            }
+                        }
+                    }
                 }
             }
 

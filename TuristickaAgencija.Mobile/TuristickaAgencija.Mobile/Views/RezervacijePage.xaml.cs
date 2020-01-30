@@ -21,9 +21,9 @@ namespace TuristickaAgencija.Mobile.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            //model.SveRezervacijePutnik = true;
+        
             await model.Init();
-            //model.SveRezervacijePutnik = false;
+    
         }
     }
 }

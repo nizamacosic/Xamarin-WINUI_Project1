@@ -7,9 +7,7 @@
              xmlns:converters="clr-namespace:TuristickaAgencija.Mobile.Converters"
              mc:Ignorable="d"
              x:Class="TuristickaAgencija.Mobile.Views.AktivniTerminiPage">
-    <ContentPage.BindingContext>
-        <ViewModels:TerminiViewModel></ViewModels:TerminiViewModel>
-    </ContentPage.BindingContext>
+
     <ContentPage.Resources>
         <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
     </ContentPage.Resources>

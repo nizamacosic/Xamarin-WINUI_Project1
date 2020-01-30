@@ -22,6 +22,7 @@ namespace TuristickaAgencija.Mobile.Views
         {
             base.OnAppearing();
             await model.Init();
+
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
