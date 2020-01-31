@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TuristickaAgencija.Model;
@@ -24,6 +26,8 @@ namespace TuristickaAgencija.WinUI.Termini
             _id = id;
         }
 
+        ImageConverter imageConverter = new ImageConverter();
+
         private async void frmDetalji_Load(object sender, EventArgs e)
         {
             await LoadSmjestaj();
@@ -32,14 +36,18 @@ namespace TuristickaAgencija.WinUI.Termini
             {
                 var entity = await _termini.GetById<Model.TerminiPutovanja>(_id);
                 txtBrojMjesta.Text = entity.BrojMjesta.ToString();
-                txtCijena.Text = entity.BrojMjesta.ToString();
+                txtCijena.Text = entity.Cijena.ToString();
                 dateTimeDO.Value = (DateTime)entity.DatumPovratka;
 
                 dateTimeOD.Value = (DateTime)entity.DatumPolaska;
+                if (entity.Slika.Length > 0)
+                {
+                    pictureBox1.Image = BytesToImage(entity.Slika);
+                }
                 if (entity.PutovanjeId > 0)
                 {
                     var put = await _putovanja.GetById<Model.Putovanja>(entity.PutovanjeId);
-                    cmbPutovanja.SelectedIndex = cmbPutovanja.FindStringExact(put.Naziv);
+                    cmbPutovanja.SelectedIndex = cmbPutovanja.FindStringExact(put.Putovanje);
                 }
                 if (entity.SmjestajId > 0)
                 {
@@ -50,6 +58,7 @@ namespace TuristickaAgencija.WinUI.Termini
                 {
                     cbAktivno.Checked = true;
                 }
+              
             }
 
         }
@@ -66,7 +75,7 @@ namespace TuristickaAgencija.WinUI.Termini
         private async Task LoadPutovanja()
         {
             var result = await _putovanja.Get<List<Model.Putovanja>>(null);
-            result.Insert(0, new Model.Putovanja());
+            //result.Insert(0, new Model.Putovanja());
             cmbPutovanja.DataSource = result;
 
             cmbPutovanja.DisplayMember = "Putovanje";
@@ -76,28 +85,119 @@ namespace TuristickaAgencija.WinUI.Termini
         TerminiPutovanjaInsertRequest request = new TerminiPutovanjaInsertRequest();
         private async void btnSnimi_Click(object sender, EventArgs e)
         {
-            request.BrojMjesta = int.Parse(txtBrojMjesta.Text.ToString());
-            request.Cijena = double.Parse(txtCijena.Text.ToString());
+          
+
+            
+            request.BrojMjesta = int.Parse(txtBrojMjesta.Text.ToString()); 
+            request.Cijena = double.Parse(txtCijena.Text.ToString()); 
             request.PutovanjeId = (int)cmbPutovanja.SelectedValue;
             request.SmjestajId = (int?)cmbSmjestaj.SelectedValue;
             request.DatumPolaska = dateTimeOD.Value;
             request.DatumPovratka = dateTimeDO.Value;
+            if(txtSlika.Text.Length>0)
+            request.Slika = (System.Byte[])imageConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
+
             if (cbAktivno.Checked == true)
             {
-                request.Aktivno = true;
-            }
-            if (!_id.HasValue)
-            {
-                await _termini.Insert<Model.TerminiPutovanja>(request);
+              request.Aktivno = true;
             }
             else
             {
-                await _termini.Update<Model.TerminiPutovanja>(_id, request);
+                request.Aktivno = false;
             }
             if (this.ValidateChildren())
             {
-                MessageBox.Show("Operacija uspjesna!");
-                this.Close();
+                 if (!_id.HasValue)
+                 {
+                 await _termini.Insert<Model.TerminiPutovanja>(request);
+                 }
+                 else
+                 {
+                 await _termini.Update<Model.TerminiPutovanja>(_id, request);
+                 }
+            
+             MessageBox.Show("Operacija uspješna!");
+             this.Close();
+            }
+                
+            
+         
+        }
+
+        private void btnUcitaj_Click(object sender, EventArgs e)
+        {
+            var result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                var fileName = openFileDialog1.FileName;
+                var file = File.ReadAllBytes(fileName);
+                request.Slika = file;
+                txtSlika.Text = fileName;
+                Image image = Image.FromFile(fileName);
+                pictureBox1.Image = image;
+            }
+        }
+        public Image BytesToImage(byte[] arr)
+        {
+            MemoryStream ms = new MemoryStream(arr);
+            return Image.FromStream(ms);
+        }
+
+        private void txtCijena_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCijena.Text))
+            {
+                errorProvider1.SetError(txtCijena, "Ovo polje je obavezno.");
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtCijena.Text, @"[0-9]+"))
+            {
+                errorProvider1.SetError(txtCijena, "");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtCijena, null);
+
+            }
+        }
+
+        private void txtBrojMjesta_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBrojMjesta.Text))
+            {
+                errorProvider1.SetError(txtBrojMjesta, "Ovo polje je obavezno.");
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtBrojMjesta.Text, @"[0-9]+"))
+            {
+                errorProvider1.SetError(txtBrojMjesta, "");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtBrojMjesta, null);
+            }
+        }
+
+        private void frmDetalji_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            errorProvider1.Clear();
+            e.Cancel = false;
+        }
+
+
+        private void dateTimeDO_Validating_1(object sender, CancelEventArgs e)
+        {
+            if (dateTimeOD.Value > dateTimeDO.Value)
+            {
+                errorProvider1.SetError(dateTimeDO, "Datum povratka mora biti veći od datuma polaska!");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(dateTimeDO, null);
+
             }
         }
     }

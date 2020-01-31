@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dateTimeOD = new System.Windows.Forms.DateTimePicker();
             this.dateTimeDO = new System.Windows.Forms.DateTimePicker();
             this.txtCijena = new System.Windows.Forms.TextBox();
@@ -42,6 +43,13 @@
             this.txtBrojMjesta = new System.Windows.Forms.TextBox();
             this.cmbPutovanja = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnUcitaj = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtSlika = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimeOD
@@ -59,6 +67,7 @@
             this.dateTimeDO.Name = "dateTimeDO";
             this.dateTimeDO.Size = new System.Drawing.Size(200, 21);
             this.dateTimeDO.TabIndex = 5;
+            this.dateTimeDO.Validating += new System.ComponentModel.CancelEventHandler(this.dateTimeDO_Validating_1);
             // 
             // txtCijena
             // 
@@ -67,6 +76,7 @@
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.Size = new System.Drawing.Size(200, 21);
             this.txtCijena.TabIndex = 6;
+            this.txtCijena.Validating += new System.ComponentModel.CancelEventHandler(this.txtCijena_Validating);
             // 
             // cbAktivno
             // 
@@ -156,6 +166,7 @@
             this.txtBrojMjesta.Name = "txtBrojMjesta";
             this.txtBrojMjesta.Size = new System.Drawing.Size(200, 21);
             this.txtBrojMjesta.TabIndex = 14;
+            this.txtBrojMjesta.Validating += new System.ComponentModel.CancelEventHandler(this.txtBrojMjesta_Validating);
             // 
             // cmbPutovanja
             // 
@@ -176,11 +187,49 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Putovanje:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(530, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 192);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnUcitaj
+            // 
+            this.btnUcitaj.Location = new System.Drawing.Point(530, 279);
+            this.btnUcitaj.Name = "btnUcitaj";
+            this.btnUcitaj.Size = new System.Drawing.Size(180, 23);
+            this.btnUcitaj.TabIndex = 19;
+            this.btnUcitaj.Text = "Učitaj...";
+            this.btnUcitaj.UseVisualStyleBackColor = true;
+            this.btnUcitaj.Click += new System.EventHandler(this.btnUcitaj_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // txtSlika
+            // 
+            this.txtSlika.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSlika.Location = new System.Drawing.Point(530, 255);
+            this.txtSlika.Name = "txtSlika";
+            this.txtSlika.Size = new System.Drawing.Size(180, 21);
+            this.txtSlika.TabIndex = 20;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 488);
+            this.ClientSize = new System.Drawing.Size(744, 488);
+            this.Controls.Add(this.txtSlika);
+            this.Controls.Add(this.btnUcitaj);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbPutovanja);
             this.Controls.Add(this.label7);
@@ -197,7 +246,10 @@
             this.Controls.Add(this.dateTimeOD);
             this.Name = "frmDetalji";
             this.Text = "frmDetalji";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDetalji_FormClosing);
             this.Load += new System.EventHandler(this.frmDetalji_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,5 +270,10 @@
         private System.Windows.Forms.TextBox txtBrojMjesta;
         private System.Windows.Forms.ComboBox cmbPutovanja;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnUcitaj;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox txtSlika;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

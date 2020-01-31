@@ -187,6 +187,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmNovoPutovanje";
             this.Text = "frmNovoPutovanje";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNovoPutovanje_FormClosing);
             this.Load += new System.EventHandler(this.frmNovoPutovanje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

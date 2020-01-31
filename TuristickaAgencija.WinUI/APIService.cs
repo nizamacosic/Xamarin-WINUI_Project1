@@ -10,7 +10,7 @@ using Flurl;
 
 namespace TuristickaAgencija.WinUI
 {
-     public class APIService
+    public class APIService
     {
         public static string KorisnickoIme { get; set; }
         public static string Lozinka { get; set; }

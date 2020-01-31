@@ -32,11 +32,11 @@
             this.btnTrazi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvIzleti = new System.Windows.Forms.DataGridView();
-            this.cmbGrad = new System.Windows.Forms.ComboBox();
             this.FakultativniIzletiId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OpisIzleta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbGrad = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIzleti)).BeginInit();
             this.SuspendLayout();
@@ -89,15 +89,6 @@
             this.dgvIzleti.TabIndex = 0;
             this.dgvIzleti.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvIzleti_MouseDoubleClick);
             // 
-            // cmbGrad
-            // 
-            this.cmbGrad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbGrad.FormattingEnabled = true;
-            this.cmbGrad.Location = new System.Drawing.Point(12, 61);
-            this.cmbGrad.Name = "cmbGrad";
-            this.cmbGrad.Size = new System.Drawing.Size(265, 23);
-            this.cmbGrad.TabIndex = 4;
-            // 
             // FakultativniIzletiId
             // 
             this.FakultativniIzletiId.DataPropertyName = "FakultativniIzletiId";
@@ -130,6 +121,15 @@
             this.Grad.Name = "Grad";
             this.Grad.ReadOnly = true;
             // 
+            // cmbGrad
+            // 
+            this.cmbGrad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGrad.FormattingEnabled = true;
+            this.cmbGrad.Location = new System.Drawing.Point(12, 61);
+            this.cmbGrad.Name = "cmbGrad";
+            this.cmbGrad.Size = new System.Drawing.Size(265, 23);
+            this.cmbGrad.TabIndex = 4;
+            // 
             // frmFakultativni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +140,7 @@
             this.Controls.Add(this.btnTrazi);
             this.Controls.Add(this.nazivIzleta);
             this.Name = "frmFakultativni";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmFakultativni";
             this.Load += new System.EventHandler(this.frmFakultativni_Load);
             this.groupBox1.ResumeLayout(false);

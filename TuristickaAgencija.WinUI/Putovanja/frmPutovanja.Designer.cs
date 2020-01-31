@@ -69,7 +69,7 @@
             this.btnTrazi.Name = "btnTrazi";
             this.btnTrazi.Size = new System.Drawing.Size(110, 23);
             this.btnTrazi.TabIndex = 17;
-            this.btnTrazi.Text = "Trazi";
+            this.btnTrazi.Text = "Traži";
             this.btnTrazi.UseVisualStyleBackColor = true;
             this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
             // 

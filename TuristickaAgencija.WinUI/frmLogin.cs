@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TuristickaAgencija.WinUI.Zaposlenici;
 
 namespace TuristickaAgencija.WinUI
 {
@@ -24,15 +25,21 @@ namespace TuristickaAgencija.WinUI
             {
                 APIService.KorisnickoIme = txtUsername.Text;
                 APIService.Lozinka = txtPassword.Text;
-                await _service.Get<dynamic>(null);
-                frmIndex frm = new frmIndex();
-                frm.Show();
+                var item=await _service.Get<dynamic>(null);
+                   
+                    frmIndex frm = new frmIndex();
+                    frm.Show();
+               
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Authentikacija", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(ex.Message, "Authentikacija", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Niste autentificirani!", "Authentikacija", MessageBoxButtons.OK);
+                Application.Restart();
             }
 
         }
+
+  
     }
 }

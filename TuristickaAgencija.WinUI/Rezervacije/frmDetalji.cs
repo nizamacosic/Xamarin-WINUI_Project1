@@ -65,7 +65,7 @@ namespace TuristickaAgencija.WinUI.Rezervacije
             {
                 await _rezervacije.Insert<Model.Rezervacije>(request);
             }
-            MessageBox.Show("Operacija uspjesna");
+            MessageBox.Show("Operacija uspješna");
             this.Close();
         }
     }

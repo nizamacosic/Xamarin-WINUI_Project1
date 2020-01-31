@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,12 +43,10 @@
             this.txtLozinka = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtLozinkaPotvrda = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.txtSlika = new System.Windows.Forms.TextBox();
-            this.btnUcitaj = new System.Windows.Forms.Button();
             this.txtMail = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIme
@@ -57,6 +56,7 @@
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(453, 21);
             this.txtIme.TabIndex = 0;
+            this.txtIme.Validating += new System.ComponentModel.CancelEventHandler(this.txtIme_Validating);
             // 
             // label1
             // 
@@ -85,6 +85,7 @@
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(453, 21);
             this.txtPrezime.TabIndex = 2;
+            this.txtPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrezime_Validating);
             // 
             // txtEmail
             // 
@@ -113,9 +114,11 @@
             this.txtKontakt.Name = "txtKontakt";
             this.txtKontakt.Size = new System.Drawing.Size(453, 21);
             this.txtKontakt.TabIndex = 6;
+            this.txtKontakt.Validating += new System.ComponentModel.CancelEventHandler(this.txtKontakt_Validating);
             // 
             // btnSnimi
             // 
+            this.btnSnimi.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSnimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSnimi.Location = new System.Drawing.Point(175, 443);
             this.btnSnimi.Name = "btnSnimi";
@@ -142,6 +145,7 @@
             this.txtKorisnickoIme.Name = "txtKorisnickoIme";
             this.txtKorisnickoIme.Size = new System.Drawing.Size(453, 21);
             this.txtKorisnickoIme.TabIndex = 9;
+            this.txtKorisnickoIme.Validating += new System.ComponentModel.CancelEventHandler(this.txtKorisnickoIme_Validating);
             // 
             // label5
             // 
@@ -160,6 +164,7 @@
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(217, 21);
             this.txtLozinka.TabIndex = 11;
+            this.txtLozinka.Validating += new System.ComponentModel.CancelEventHandler(this.txtLozinka_Validating);
             // 
             // label6
             // 
@@ -178,35 +183,11 @@
             this.txtLozinkaPotvrda.Name = "txtLozinkaPotvrda";
             this.txtLozinkaPotvrda.Size = new System.Drawing.Size(217, 21);
             this.txtLozinkaPotvrda.TabIndex = 13;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(524, 73);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(166, 176);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.txtLozinkaPotvrda.Validating += new System.ComponentModel.CancelEventHandler(this.txtLozinkaPotvrda_Validating);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // txtSlika
-            // 
-            this.txtSlika.Location = new System.Drawing.Point(524, 271);
-            this.txtSlika.Name = "txtSlika";
-            this.txtSlika.Size = new System.Drawing.Size(166, 20);
-            this.txtSlika.TabIndex = 16;
-            // 
-            // btnUcitaj
-            // 
-            this.btnUcitaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUcitaj.Location = new System.Drawing.Point(524, 298);
-            this.btnUcitaj.Name = "btnUcitaj";
-            this.btnUcitaj.Size = new System.Drawing.Size(166, 46);
-            this.btnUcitaj.TabIndex = 17;
-            this.btnUcitaj.Text = "Učitaj sliku";
-            this.btnUcitaj.UseVisualStyleBackColor = true;
             // 
             // txtMail
             // 
@@ -215,16 +196,19 @@
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(453, 21);
             this.txtMail.TabIndex = 18;
+            this.txtMail.Validating += new System.ComponentModel.CancelEventHandler(this.txtMail_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmRegistracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 518);
+            this.CausesValidation = false;
+            this.ClientSize = new System.Drawing.Size(476, 506);
             this.Controls.Add(this.txtMail);
-            this.Controls.Add(this.btnUcitaj);
-            this.Controls.Add(this.txtSlika);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtLozinkaPotvrda);
             this.Controls.Add(this.label5);
@@ -241,8 +225,8 @@
             this.Controls.Add(this.txtIme);
             this.Name = "frmRegistracija";
             this.Text = "frmRegistracija";
-            this.Load += new System.EventHandler(this.frmRegistracija_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRegistracija_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,10 +248,8 @@
         private System.Windows.Forms.TextBox txtLozinka;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtLozinkaPotvrda;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.TextBox txtSlika;
-        private System.Windows.Forms.Button btnUcitaj;
         private System.Windows.Forms.TextBox txtMail;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

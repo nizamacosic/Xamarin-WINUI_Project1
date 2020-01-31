@@ -15,7 +15,7 @@ namespace TuristickaAgencija.Model
         public int? ZaposlenikId { get; set; }
         public int? GradId { get; set; } 
         public string Grad { get; set; }
-        public string Putovanje { get { return Naziv + " | " + Grad; } }
+        public string Putovanje { get { return Naziv + " | " + Grad+ " | "+ VrstaPutovanja; } }
 
 
     }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TuristickaAgencija.Model.Requests;
@@ -60,6 +61,31 @@ namespace TuristickaAgencija.WinUI.Uplate
             }
             MessageBox.Show("Operacija uspjesna");
             this.Close();
+        }
+
+        private void txtIznos_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtIznos.Text))
+            {
+                errorProvider1.SetError(txtIznos, "Ovo polje je obavezno.");
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtIznos.Text, @"[0-9]+"))
+            {
+                errorProvider1.SetError(txtIznos, "");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtIznos, null);
+            }
+
+        }
+
+        private void frmDetalji_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            errorProvider1.Clear();
+            e.Cancel = false;
         }
     }
 }

@@ -32,17 +32,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvKorisnici = new System.Windows.Forms.DataGridView();
-            this.PutnikKorisnikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kontakt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GradId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KorisnickoIme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.PutnikKorisnikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KorisnickoIme = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kontakt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).BeginInit();
             this.SuspendLayout();
@@ -83,64 +82,15 @@
             this.dgvKorisnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKorisnici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PutnikKorisnikId,
+            this.KorisnickoIme,
             this.Ime,
             this.Prezime,
             this.Email,
-            this.Kontakt,
-            this.GradId,
-            this.KorisnickoIme});
+            this.Kontakt});
             this.dgvKorisnici.Location = new System.Drawing.Point(6, 13);
             this.dgvKorisnici.Name = "dgvKorisnici";
             this.dgvKorisnici.Size = new System.Drawing.Size(764, 280);
             this.dgvKorisnici.TabIndex = 4;
-            // 
-            // PutnikKorisnikId
-            // 
-            this.PutnikKorisnikId.HeaderText = "PutnikKorisnikId";
-            this.PutnikKorisnikId.Name = "PutnikKorisnikId";
-            this.PutnikKorisnikId.Visible = false;
-            this.PutnikKorisnikId.Width = 108;
-            // 
-            // Ime
-            // 
-            this.Ime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ime.DataPropertyName = "Ime";
-            this.Ime.HeaderText = "Ime";
-            this.Ime.Name = "Ime";
-            // 
-            // Prezime
-            // 
-            this.Prezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Prezime.DataPropertyName = "Prezime";
-            this.Prezime.HeaderText = "Prezime";
-            this.Prezime.Name = "Prezime";
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // Kontakt
-            // 
-            this.Kontakt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Kontakt.DataPropertyName = "Kontakt";
-            this.Kontakt.HeaderText = "Kontakt";
-            this.Kontakt.Name = "Kontakt";
-            // 
-            // GradId
-            // 
-            this.GradId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GradId.DataPropertyName = "Grad";
-            this.GradId.HeaderText = "Grad";
-            this.GradId.Name = "GradId";
-            // 
-            // KorisnickoIme
-            // 
-            this.KorisnickoIme.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.KorisnickoIme.HeaderText = "Korisnicko ime";
-            this.KorisnickoIme.Name = "KorisnickoIme";
             // 
             // txtIme
             // 
@@ -178,6 +128,47 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Ime:";
             // 
+            // PutnikKorisnikId
+            // 
+            this.PutnikKorisnikId.HeaderText = "PutnikKorisnikId";
+            this.PutnikKorisnikId.Name = "PutnikKorisnikId";
+            this.PutnikKorisnikId.Visible = false;
+            this.PutnikKorisnikId.Width = 108;
+            // 
+            // KorisnickoIme
+            // 
+            this.KorisnickoIme.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.KorisnickoIme.HeaderText = "Korisnicko ime";
+            this.KorisnickoIme.Name = "KorisnickoIme";
+            // 
+            // Ime
+            // 
+            this.Ime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ime.DataPropertyName = "Ime";
+            this.Ime.HeaderText = "Ime";
+            this.Ime.Name = "Ime";
+            // 
+            // Prezime
+            // 
+            this.Prezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Prezime.DataPropertyName = "Prezime";
+            this.Prezime.HeaderText = "Prezime";
+            this.Prezime.Name = "Prezime";
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // Kontakt
+            // 
+            this.Kontakt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Kontakt.DataPropertyName = "Kontakt";
+            this.Kontakt.HeaderText = "Kontakt";
+            this.Kontakt.Name = "Kontakt";
+            // 
             // frmKorisnici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,11 +202,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn PutnikKorisnikId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KorisnickoIme;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kontakt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GradId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KorisnickoIme;
     }
 }

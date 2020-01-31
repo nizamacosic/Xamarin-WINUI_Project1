@@ -51,7 +51,7 @@ namespace TuristickaAgencija.WinUI.Gradovi
                 {
                     await _apiService.Insert<Model.Gradovi>(request);
                 }
-                MessageBox.Show("Operacija uspjesna!");
+                MessageBox.Show("Operacija uspješna!");
                 this.Close();
             }
           
@@ -84,6 +84,12 @@ namespace TuristickaAgencija.WinUI.Gradovi
                 errorProvider1.SetError(txtPostanskiBroj, null);
 
             }
+        }
+
+        private void frmDetalji_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            errorProvider1.Clear();
+            e.Cancel = false;
         }
     }
 }

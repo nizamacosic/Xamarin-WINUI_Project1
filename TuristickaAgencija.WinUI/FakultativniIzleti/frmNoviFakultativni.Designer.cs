@@ -126,6 +126,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmNoviFakultativni";
             this.Text = "frmNoviFakultativni";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNoviFakultativni_FormClosing);
             this.Load += new System.EventHandler(this.frmNoviFakultativni_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

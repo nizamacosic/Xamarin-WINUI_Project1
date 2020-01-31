@@ -17,6 +17,7 @@ namespace TuristickaAgencija.WinUI.Putovanja
         APIService _vrstaPutovanja = new APIService("VrstaPutovanja");
         APIService _gradovi = new APIService("Gradovi");
         APIService _putovanja = new APIService("Putovanja");
+        APIService _service = new APIService("Zaposlenici");
         private int? _id=null;
 
         public frmNovoPutovanje(int?id = null)
@@ -100,6 +101,18 @@ namespace TuristickaAgencija.WinUI.Putovanja
 
             request.Naziv = txtNaziv.Text;
             request.Opis = txtOpis.Text;
+            var zaposlenik=APIService.KorisnickoIme;
+           
+            List<Model.Zaposlenici> zapos = await _service.Get<List<Model.Zaposlenici>>(null);
+            foreach(var i in zapos)
+            {
+                if(i.KorisnickoIme==zaposlenik)
+                {
+                    request.ZaposlenikId = i.ZaposlenikId;
+                    break;
+                }
+            }
+            if(txtSlika.Text.Length>0)
             request.Slika = (System.Byte[])imageConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
             
             if (!_id.HasValue)
@@ -112,8 +125,10 @@ namespace TuristickaAgencija.WinUI.Putovanja
             }
             if (this.ValidateChildren())
             {
-                MessageBox.Show("Operacija uspjesna!");
+                MessageBox.Show("Operacija uspješna!");
+                
                 this.Close();
+                
             }
         }
 
@@ -131,6 +146,10 @@ namespace TuristickaAgencija.WinUI.Putovanja
             }
         }
 
-
+        private void frmNovoPutovanje_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            errorProvider1.Clear();
+            e.Cancel = false;
+        }
     }
 }

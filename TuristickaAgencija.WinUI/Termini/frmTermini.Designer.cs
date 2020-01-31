@@ -43,6 +43,7 @@
             this.DatumPovratka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrojMjesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SmjestajId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Slika = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTermini)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             this.groupBox1.Controls.Add(this.dgvTermini);
             this.groupBox1.Location = new System.Drawing.Point(12, 118);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(705, 320);
+            this.groupBox1.Size = new System.Drawing.Size(847, 320);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -70,12 +71,13 @@
             this.DatumPolaska,
             this.DatumPovratka,
             this.BrojMjesta,
-            this.SmjestajId});
+            this.SmjestajId,
+            this.Slika});
             this.dgvTermini.Location = new System.Drawing.Point(6, 19);
             this.dgvTermini.Name = "dgvTermini";
             this.dgvTermini.ReadOnly = true;
             this.dgvTermini.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTermini.Size = new System.Drawing.Size(693, 257);
+            this.dgvTermini.Size = new System.Drawing.Size(835, 257);
             this.dgvTermini.TabIndex = 0;
             this.dgvTermini.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvTermini_MouseDoubleClick);
             // 
@@ -85,26 +87,26 @@
             this.cmbPutovanja.FormattingEnabled = true;
             this.cmbPutovanja.Location = new System.Drawing.Point(18, 46);
             this.cmbPutovanja.Name = "cmbPutovanja";
-            this.cmbPutovanja.Size = new System.Drawing.Size(219, 23);
+            this.cmbPutovanja.Size = new System.Drawing.Size(335, 23);
             this.cmbPutovanja.TabIndex = 1;
             // 
             // btnTrazi
             // 
             this.btnTrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrazi.Location = new System.Drawing.Point(268, 46);
+            this.btnTrazi.Location = new System.Drawing.Point(359, 46);
             this.btnTrazi.Name = "btnTrazi";
             this.btnTrazi.Size = new System.Drawing.Size(75, 23);
             this.btnTrazi.TabIndex = 2;
-            this.btnTrazi.Text = "Trazi";
+            this.btnTrazi.Text = "Traži";
             this.btnTrazi.UseVisualStyleBackColor = true;
             this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
             // 
             // btnNoviTermin
             // 
             this.btnNoviTermin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNoviTermin.Location = new System.Drawing.Point(575, 30);
+            this.btnNoviTermin.Location = new System.Drawing.Point(717, 37);
             this.btnNoviTermin.Name = "btnNoviTermin";
-            this.btnNoviTermin.Size = new System.Drawing.Size(136, 37);
+            this.btnNoviTermin.Size = new System.Drawing.Size(136, 40);
             this.btnNoviTermin.TabIndex = 3;
             this.btnNoviTermin.Text = "Novi termin";
             this.btnNoviTermin.UseVisualStyleBackColor = true;
@@ -181,15 +183,22 @@
             // SmjestajId
             // 
             this.SmjestajId.DataPropertyName = "Smjestaj";
-            this.SmjestajId.HeaderText = "Smjestaj";
+            this.SmjestajId.HeaderText = "Smještaj";
             this.SmjestajId.Name = "SmjestajId";
             this.SmjestajId.ReadOnly = true;
+            // 
+            // Slika
+            // 
+            this.Slika.DataPropertyName = "Slika";
+            this.Slika.HeaderText = "Slika";
+            this.Slika.Name = "Slika";
+            this.Slika.ReadOnly = true;
             // 
             // frmTermini
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 450);
+            this.ClientSize = new System.Drawing.Size(896, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNoviTermin);
             this.Controls.Add(this.btnTrazi);
@@ -222,5 +231,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DatumPovratka;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrojMjesta;
         private System.Windows.Forms.DataGridViewTextBoxColumn SmjestajId;
+        private System.Windows.Forms.DataGridViewImageColumn Slika;
     }
 }

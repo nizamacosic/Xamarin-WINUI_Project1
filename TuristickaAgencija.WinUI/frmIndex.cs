@@ -201,20 +201,8 @@ namespace TuristickaAgencija.WinUI
             frm.Show();
         }
 
-        private void pretragaToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            frmTermini frm = new frmTermini();
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
 
-            frm.Show();
-        }
 
-        private void dodajNoviTerminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDetalji frm = new frmDetalji();
-            frm.Show();
-        }
 
         private void pretragaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -261,6 +249,26 @@ namespace TuristickaAgencija.WinUI
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+        }
+
+        private void pretragaToolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            frmTermini frm = new frmTermini();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+
+            frm.Show();
+        }
+
+        private void noviTerminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDetalji frm = new frmDetalji();
+            frm.Show();
+        }
+
+        private void odjavaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

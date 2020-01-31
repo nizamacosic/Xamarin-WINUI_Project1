@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNovi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvVodici = new System.Windows.Forms.DataGridView();
@@ -47,7 +49,7 @@
             // btnNovi
             // 
             this.btnNovi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovi.Location = new System.Drawing.Point(516, 37);
+            this.btnNovi.Location = new System.Drawing.Point(594, 33);
             this.btnNovi.Name = "btnNovi";
             this.btnNovi.Size = new System.Drawing.Size(154, 23);
             this.btnNovi.TabIndex = 0;
@@ -60,7 +62,7 @@
             this.groupBox1.Controls.Add(this.dgvVodici);
             this.groupBox1.Location = new System.Drawing.Point(12, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(664, 309);
+            this.groupBox1.Size = new System.Drawing.Size(736, 309);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -69,6 +71,14 @@
             this.dgvVodici.AllowUserToAddRows = false;
             this.dgvVodici.AllowUserToDeleteRows = false;
             this.dgvVodici.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVodici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVodici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVodici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.VodicID,
@@ -78,11 +88,19 @@
             this.JMBG,
             this.Zauzet,
             this.Slika});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVodici.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVodici.Location = new System.Drawing.Point(0, 19);
             this.dgvVodici.Name = "dgvVodici";
             this.dgvVodici.ReadOnly = true;
             this.dgvVodici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVodici.Size = new System.Drawing.Size(658, 284);
+            this.dgvVodici.Size = new System.Drawing.Size(730, 284);
             this.dgvVodici.TabIndex = 0;
             this.dgvVodici.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvVodici_DataError);
             this.dgvVodici.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVodici_MouseDoubleClick);
@@ -172,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 387);
+            this.ClientSize = new System.Drawing.Size(760, 387);
             this.Controls.Add(this.cbZauzet);
             this.Controls.Add(this.btnTrazi);
             this.Controls.Add(this.groupBox1);

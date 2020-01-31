@@ -113,6 +113,7 @@
             this.Controls.Add(this.txtNaziv);
             this.Name = "frmDetalji";
             this.Text = "frmDetalji";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDetalji_FormClosing);
             this.Load += new System.EventHandler(this.frmDetalji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

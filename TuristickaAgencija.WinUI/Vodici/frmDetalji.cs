@@ -35,12 +35,12 @@ namespace TuristickaAgencija.WinUI.Vodici
                     txtPrezime.Text = vodic.Prezime;
                     txtKontakt.Text = vodic.Kontakt;
                     txtJMBG.Text = vodic.Jmbg;
-
+                    
                 if (vodic.Slika.Length > 0)
                 { 
                     pictureBox1.Image = BytesToImage(vodic.Slika);
                 }
-                    cbZauzet.Checked = (bool)vodic.Zauzet;
+                    
             }
         }
         public Image BytesToImage(byte[] arr)
@@ -55,7 +55,7 @@ namespace TuristickaAgencija.WinUI.Vodici
 
             request.Ime = txtIme.Text;
             request.Prezime = txtPrezime.Text;
-            request.Zauzet = cbZauzet.Checked;
+            request.Zauzet = false;
             request.Kontakt = txtKontakt.Text;
             request.Jmbg = txtJMBG.Text;
             request.Slika = (System.Byte[])imageConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
@@ -71,7 +71,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             }
             if (this.ValidateChildren())
             {
-                MessageBox.Show("Operacija uspjesna!");
+                MessageBox.Show("Operacija uspješna!");
             }
         }
 
@@ -89,47 +89,22 @@ namespace TuristickaAgencija.WinUI.Vodici
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void txtIme_Validating(object sender, CancelEventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void txtPrezime_Validating(object sender, CancelEventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void txtJMBG_Validating(object sender, CancelEventArgs e)
         {
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtKontakt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtJMBG_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPrezime_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIme_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbZauzet_CheckedChanged(object sender, EventArgs e)
+        private void txtKontakt_Validating(object sender, CancelEventArgs e)
         {
 
         }

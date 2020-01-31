@@ -16,7 +16,6 @@ namespace TuristickaAgencija.WebAPI.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-
     public class ZaposleniciController : ControllerBase
     {
 
@@ -32,7 +31,6 @@ namespace TuristickaAgencija.WebAPI.Controllers
         [HttpGet]
 
         public List<Model.Zaposlenici> Get([FromQuery]ZaposleniciSearchRequest request)
-
         {
             return _service.Get(request);
         }
@@ -40,7 +38,6 @@ namespace TuristickaAgencija.WebAPI.Controllers
         [HttpPost]
 
         public Model.Zaposlenici Insert(ZaposleniciInsertRequest request)
-
         {
             return _service.Insert(request);
         }

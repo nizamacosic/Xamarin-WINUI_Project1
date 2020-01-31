@@ -45,10 +45,10 @@ namespace TuristickaAgencija.WebAPI.Security
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(':');
                 var username = credentials[0];
                 var password = credentials[1];
-                user =  _userService.Autentificiraj(username, password);
-                if(user==null)
+                user = _userService.Autentificiraj(username, password);
+                if (user == null)
                 {
-                    user =  _userService.AutentificirajPutnika(username, password);
+                    user = _userService.AutentificirajPutnika(username, password);
                     Putnik = true;
                 }
             }
@@ -58,7 +58,8 @@ namespace TuristickaAgencija.WebAPI.Security
             }
 
             if (user == null)
-                return AuthenticateResult.Fail("Invalid Username or Password");
+            return AuthenticateResult.Fail("Invalid Username or Password");
+          
 
             var claims = new List<Claim> {
                 new Claim(ClaimTypes.NameIdentifier, user.KorisnickoIme),

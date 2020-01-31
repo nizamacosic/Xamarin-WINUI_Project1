@@ -61,14 +61,16 @@ namespace TuristickaAgencija.WinUI.Putovanja
                 if (_id.HasValue)
                 {
                     await _fakultativni.Update<Model.FakultativniIzleti>(_id, request);
-
+                    
                 }
                 else
                 {
                     await _fakultativni.Insert<Model.FakultativniIzleti>(request);
                 }
-                MessageBox.Show("Operacija uspjesna!");
+                MessageBox.Show("Operacija uspješna!");
                 this.Close();
+
+           
             }
         }
 
@@ -84,6 +86,13 @@ namespace TuristickaAgencija.WinUI.Putovanja
                 errorProvider1.SetError(txtNaziv, null);
 
             }
+        }
+
+        private void frmNoviFakultativni_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            errorProvider1.Clear();
+            e.Cancel = false;
+
         }
     }
 }
