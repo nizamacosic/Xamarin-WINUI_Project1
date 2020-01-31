@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TuristickaAgencija.WinUI.Gradovi;
 using TuristickaAgencija.WinUI.Izvjestaji;
+using TuristickaAgencija.WinUI.Komentari;
 using TuristickaAgencija.WinUI.Korisnici;
 using TuristickaAgencija.WinUI.Novosti;
+using TuristickaAgencija.WinUI.Pretplate;
 using TuristickaAgencija.WinUI.Putovanja;
 using TuristickaAgencija.WinUI.Rezervacije;
 using TuristickaAgencija.WinUI.Smjestaj;
@@ -269,6 +271,39 @@ namespace TuristickaAgencija.WinUI
         private void odjavaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void dodajVodičeNaTerminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTerminiVodici frm = new frmTerminiVodici();
+            frm.Show();
+        }
+
+        private void komentariIOcjeneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmKomentari frm = new frmKomentari();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+
+            frm.Show();
+        }
+
+        private void pretragaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmPreplate frm = new frmPreplate();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+
+            frm.Show();
+        }
+
+        private void vrstaPutovanjaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVrstaPutovanja frm = new frmVrstaPutovanja();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+
+            frm.Show();
         }
     }
 }

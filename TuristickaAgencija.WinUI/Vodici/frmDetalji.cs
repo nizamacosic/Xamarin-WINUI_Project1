@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TuristickaAgencija.Model.Requests;
@@ -72,6 +73,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             if (this.ValidateChildren())
             {
                 MessageBox.Show("Operacija uspješna!");
+                this.Close();
             }
         }
 
@@ -91,22 +93,85 @@ namespace TuristickaAgencija.WinUI.Vodici
 
         private void txtIme_Validating(object sender, CancelEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtIme.Text))
+            {
+                errorProvider1.SetError(txtIme, "Ovo polje je obavezno.");
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtIme.Text, @"^[a-zA-Z ]+$"))
+            {
+                errorProvider1.SetError(txtIme, "Ime smije da sadrži samo slova");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtIme, null);
 
+            }
         }
 
         private void txtPrezime_Validating(object sender, CancelEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtPrezime.Text))
+            {
+                errorProvider1.SetError(txtPrezime, "Ovo polje je obavezno.");
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtPrezime.Text, @"^[a-zA-Z ]+$"))
+            {
+                errorProvider1.SetError(txtPrezime, "Prezime mora da sadrži samo slova!");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtPrezime, null);
 
+            }
         }
-
         private void txtJMBG_Validating(object sender, CancelEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtJMBG.Text))
+            {
+                errorProvider1.SetError(txtJMBG, "Ovo polje je obavezno.");
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtJMBG.Text, @"[0-9]{13}"))
+            {
+                errorProvider1.SetError(txtJMBG, "JMBG sadrži 13 brojeva!");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtJMBG, null);
 
+            }
         }
-
-        private void txtKontakt_Validating(object sender, CancelEventArgs e)
+        private void txtKontakt_Validating_1(object sender, CancelEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtKontakt.Text))
+            {
+                errorProvider1.SetError(txtKontakt, "Ovo polje je obavezno.");
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtKontakt.Text, @""))
+            {
+                errorProvider1.SetError(txtKontakt, "JMBG sadrži 13 brojeva!");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtJMBG, null);
+
+            }
 
         }
+
+        private void frmDetalji_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            errorProvider1.Clear();
+            e.Cancel = false;
+        }
+
+      
     }
 }

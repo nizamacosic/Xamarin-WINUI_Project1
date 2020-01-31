@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.cmbGrad = new System.Windows.Forms.ComboBox();
@@ -35,6 +36,8 @@
             this.txtCijena = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Grad = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,6 +57,7 @@
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(266, 21);
             this.txtNaziv.TabIndex = 1;
+            this.txtNaziv.Validating += new System.ComponentModel.CancelEventHandler(this.txtNaziv_Validating);
             // 
             // cmbGrad
             // 
@@ -82,6 +86,7 @@
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.Size = new System.Drawing.Size(266, 21);
             this.txtCijena.TabIndex = 5;
+            this.txtCijena.Validating += new System.ComponentModel.CancelEventHandler(this.txtCijena_Validating);
             // 
             // label2
             // 
@@ -103,11 +108,15 @@
             this.Grad.TabIndex = 6;
             this.Grad.Text = "Grad";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 311);
+            this.ClientSize = new System.Drawing.Size(351, 311);
             this.Controls.Add(this.Grad);
             this.Controls.Add(this.txtCijena);
             this.Controls.Add(this.label2);
@@ -118,7 +127,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmDetalji";
             this.Text = "frmDetalji";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDetalji_FormClosing);
             this.Load += new System.EventHandler(this.frmDetalji_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +144,6 @@
         private System.Windows.Forms.TextBox txtCijena;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Grad;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

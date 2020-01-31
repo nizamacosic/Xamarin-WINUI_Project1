@@ -26,11 +26,11 @@ namespace TuristickaAgencija.WebAPI.Services
 
             if (!string.IsNullOrWhiteSpace(request?.Ime))
             {
-                query = query.Where(x => x.Ime.StartsWith(request.Ime));
+                query = query.Where(x => x.Ime.ToLower().StartsWith(request.Ime.ToLower()));
             }
             if (!string.IsNullOrWhiteSpace(request?.Prezime))
             {
-                query = query.Where(x => x.Prezime.StartsWith(request.Prezime));
+                query = query.Where(x => x.Prezime.ToLower().StartsWith(request.Prezime.ToLower()));
             }
             var list = query.ToList();
             return _mapper.Map<List<Model.PutniciKorisnici>>(list);

@@ -52,6 +52,12 @@ namespace TuristickaAgencija.WinUI
 
             return await url.WithBasicAuth(KorisnickoIme, Lozinka).PutJsonAsync(request).ReceiveJson<T>();
         }
+        public async Task<T> Delete<T>(object id)
+        {
+            var url = $"{Properties.Settings.Default.APIUrl}/{_route}/{id}";
 
+            return await url.WithBasicAuth(KorisnickoIme, Lozinka).DeleteAsync().ReceiveJson<T>();
+
+        }
     }
 }

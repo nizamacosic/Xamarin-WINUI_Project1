@@ -44,6 +44,10 @@ namespace TuristickaAgencija.WebAPI.Mappers
             CreateMap<Vodici, Model.Requests.VodicInsertRequest>().ReverseMap();
             CreateMap<Vodici, Model.Vodici>().ReverseMap();
 
+            CreateMap<TerminiVodici, Model.Requests.TerminiVodiciInsertRequest>().ReverseMap();
+            CreateMap<TerminiVodici, Model.TerminiVodici>().ReverseMap();
+
+
             CreateMap<Novosti, Model.Novosti>().ReverseMap();
             CreateMap<Novosti,NovostiInsertRequest>().ReverseMap();
             CreateMap<Novosti, Model.Novosti>().ForMember(x => x.Putovanje
@@ -145,6 +149,8 @@ namespace TuristickaAgencija.WebAPI.Mappers
             CreateMap<Obavijesti, Model.Obavijesti>().ReverseMap();
             CreateMap<Obavijesti,ObavijestiInsertRequest>().ReverseMap();
 
+            CreateMap<VrstePutovanja, Model.VrstaPutovanja>().ReverseMap();
+            CreateMap<VrstePutovanja, VrstaPutovanjaInsertRequest>().ReverseMap();
 
 
         }

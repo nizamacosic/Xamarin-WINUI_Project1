@@ -33,11 +33,29 @@ namespace TuristickaAgencija.WinUI.Rezervacije
             frm.Show();
         }
 
-        private void dgvRezervacije_MouseDoubleClick(object sender, MouseEventArgs e)
+        private async void dgvRezervacije_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+           
             var id = dgvRezervacije.SelectedRows[0].Cells[0].Value;
-            frmDetalji frm = new frmDetalji(int.Parse(id.ToString()));
-            frm.Show();
+            Model.Rezervacije rez = await _rezervacije.GetById<Model.Rezervacije>(int.Parse(id.ToString()));
+            var termin = await _termini.GetById<Model.TerminiPutovanja>(rez.TerminPutovanjaId);
+           
+
+                DialogResult dialogResult = MessageBox.Show("Da li želite otkazati rezervaciju?", "Otkazivanje", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if ((termin.DatumPolaska - DateTime.Now).TotalDays > 3)
+                    {
+                    await _rezervacije.Delete<Model.Rezervacije>(id);
+
+                    }
+                   else
+                   {
+                    MessageBox.Show("Nije moguće otkazati.");
+                   }
+              }
+           
+
         }
 
 

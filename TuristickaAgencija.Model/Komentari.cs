@@ -7,7 +7,7 @@ namespace TuristickaAgencija.Model
     public class Komentari
     {
         public int KomentarId { get; set; }
-        public string Naslov { get; set; }
+       
         public DateTime? Vrijeme { get; set; }
         public string Sadrzaj { get; set; }
         public int? PutnikKorisnikId { get; set; }

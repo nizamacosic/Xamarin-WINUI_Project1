@@ -180,11 +180,7 @@ namespace TuristickaAgencija.WinUI.Termini
             }
         }
 
-        private void frmDetalji_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            errorProvider1.Clear();
-            e.Cancel = false;
-        }
+   
 
 
         private void dateTimeDO_Validating_1(object sender, CancelEventArgs e)
@@ -199,6 +195,11 @@ namespace TuristickaAgencija.WinUI.Termini
                 errorProvider1.SetError(dateTimeDO, null);
 
             }
+        }
+        private void frmDetalji_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            errorProvider1.Clear();
+            e.Cancel = false;
         }
     }
 }

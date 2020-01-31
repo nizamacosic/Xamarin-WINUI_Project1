@@ -80,7 +80,8 @@ namespace TuristickaAgencija
 
             services.AddScoped<ICRUDService<Model.Gradovi, GradoviSearchRequest, GradoviInsertRequest, GradoviInsertRequest>, GradoviService>();
             
-            services.AddScoped<IService<VrstaPutovanja, object>, BaseService<VrstaPutovanja, object, VrstePutovanja>>();
+            services.AddScoped<ICRUDService<VrstaPutovanja, object,VrstaPutovanjaInsertRequest,VrstaPutovanjaInsertRequest>,
+                BaseCRUDService<VrstaPutovanja, object, VrstePutovanja,VrstaPutovanjaInsertRequest,VrstaPutovanjaInsertRequest>>();
 
             
             services.AddScoped<ICRUDService<Model.Putovanja, PutovanjaSearchRequest, PutovanjaInsertRequest, PutovanjaInsertRequest>, PutovanjaService>();

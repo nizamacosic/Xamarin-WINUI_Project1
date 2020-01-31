@@ -36,7 +36,7 @@ namespace TuristickaAgencija.WinUI.Novosti
             cmbPutovanja.DataSource = result;
             
             cmbPutovanja.ValueMember = "PutovanjaId";
-            cmbPutovanja.DisplayMember = "Naziv";
+            cmbPutovanja.DisplayMember = "Putovanje";
         }
         private async Task LoadNovosti()
         {

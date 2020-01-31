@@ -60,6 +60,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Termini\frmTerminiVodici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Termini\frmTerminiVodici.Designer.cs">
+      <DependentUpon>frmTerminiVodici.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gradovi\frmDetalji.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     <Compile Include="Izvjestaji\frmIzvjestaj.Designer.cs">
       <DependentUpon>frmIzvjestaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="Komentari\frmKomentari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Komentari\frmKomentari.Designer.cs">
+      <DependentUpon>frmKomentari.cs</DependentUpon>
+    </Compile>
     <Compile Include="Korisnici\frmKorisnici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,24 @@
     </Compile>
     <Compile Include="Novosti\frmNovosti.Designer.cs">
       <DependentUpon>frmNovosti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pretplate\frmDetaljiVrsta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pretplate\frmDetaljiVrsta.Designer.cs">
+      <DependentUpon>frmDetaljiVrsta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pretplate\frmPreplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pretplate\frmPreplate.Designer.cs">
+      <DependentUpon>frmPreplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pretplate\frmVrstaPutovanja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pretplate\frmVrstaPutovanja.Designer.cs">
+      <DependentUpon>frmVrstaPutovanja.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -200,6 +230,9 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Termini\frmTerminiVodici.resx">
+      <DependentUpon>frmTerminiVodici.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gradovi\frmDetalji.resx">
       <DependentUpon>frmDetalji.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +242,9 @@
     <EmbeddedResource Include="Izvjestaji\frmIzvjestaj.resx">
       <DependentUpon>frmIzvjestaj.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Komentari\frmKomentari.resx">
+      <DependentUpon>frmKomentari.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Korisnici\frmKorisnici.resx">
       <DependentUpon>frmKorisnici.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +253,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Novosti\frmNovosti.resx">
       <DependentUpon>frmNovosti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pretplate\frmDetaljiVrsta.resx">
+      <DependentUpon>frmDetaljiVrsta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pretplate\frmPreplate.resx">
+      <DependentUpon>frmPreplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pretplate\frmVrstaPutovanja.resx">
+      <DependentUpon>frmVrstaPutovanja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

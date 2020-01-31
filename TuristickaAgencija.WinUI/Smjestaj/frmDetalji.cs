@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TuristickaAgencija.Model.Requests;
@@ -40,7 +41,7 @@ namespace TuristickaAgencija.WinUI.Smjestaj
         {
 
             var result = await _gradovi.Get<List<Model.Gradovi>>(null);
-            result.Insert(0, new Model.Gradovi());
+          
             cmbGrad.DataSource = result;
             cmbGrad.DisplayMember = "NazivGrada";
             cmbGrad.ValueMember = "GradId";
@@ -54,8 +55,8 @@ namespace TuristickaAgencija.WinUI.Smjestaj
 
             request.Naziv = txtNaziv.Text;
             request.CijenaNoc = (double.Parse(txtCijena.Text));
-
-            request.GradId =(int) gradid;
+            request.GradId = int.Parse(gradid.ToString()); 
+            
             if (!_id.HasValue)
             {
                 await _smjestaj.Insert<Model.Putovanja>(request);
@@ -66,9 +67,48 @@ namespace TuristickaAgencija.WinUI.Smjestaj
             }
             if (this.ValidateChildren())
             {
-                MessageBox.Show("Operacija uspjesna!");
+                MessageBox.Show("Operacija uspješna!");
                 this.Close();
             }
         }
+
+        private void txtCijena_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCijena.Text))
+            {
+                errorProvider1.SetError(txtCijena, "Ovo polje je obavezno.");
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtCijena.Text, @"[0-9]+"))
+            {
+                errorProvider1.SetError(txtCijena, "Samo brojevi");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtCijena, null);
+
+            }
+        }
+
+
+        private void txtNaziv_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNaziv.Text))
+            {
+                errorProvider1.SetError(txtNaziv, "Ovo polje je obavezno.");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtNaziv, null);
+            }
+        }
+        private void frmDetalji_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            errorProvider1.Clear();
+            e.Cancel = false;
+        }
+
     }
 }

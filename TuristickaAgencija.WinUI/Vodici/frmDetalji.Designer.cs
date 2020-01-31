@@ -111,7 +111,7 @@
             this.txtKontakt.Name = "txtKontakt";
             this.txtKontakt.Size = new System.Drawing.Size(219, 21);
             this.txtKontakt.TabIndex = 7;
-            this.txtKontakt.Validating += new System.ComponentModel.CancelEventHandler(this.txtKontakt_Validating);
+            this.txtKontakt.Validating += new System.ComponentModel.CancelEventHandler(this.txtKontakt_Validating_1);
             // 
             // label4
             // 
@@ -187,6 +187,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmDetalji";
             this.Text = "frmDetalji";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDetalji_FormClosing);
             this.Load += new System.EventHandler(this.frmDetalji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

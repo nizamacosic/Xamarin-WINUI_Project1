@@ -7,6 +7,7 @@ namespace TuristickaAgencija.Model
     public class Vodici
     {
         public int VodicId { get; set; }
+        public string Vodic { get { return Ime + " " + Prezime; } }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string Kontakt { get; set; }

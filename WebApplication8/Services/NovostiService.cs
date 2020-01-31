@@ -21,9 +21,16 @@ namespace TuristickaAgencija.WebAPI.Services
             if (search?.PutovanjeId.HasValue == true)
             {
                 query = query.Where(x => x.PutovanjeId== search.PutovanjeId);
-
             }
-            query = query.OrderByDescending(x => x.NovostId);
+            if (search?.ZaposlenikId.HasValue == true)
+            {
+                query = query.Where(x => x.ZaposlenikId == search.ZaposlenikId);
+            }
+            if (search?.Vrijeme.HasValue == true)
+            {
+                query = query.Where(x => x.DatumVrijeme == search.Vrijeme);
+            }
+            query = query.OrderByDescending(x => x.DatumVrijeme);
             var list = query.ToList();
             return _mapper.Map<List<Model.Novosti>>(list);
         }

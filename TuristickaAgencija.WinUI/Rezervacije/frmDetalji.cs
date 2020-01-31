@@ -38,8 +38,22 @@ namespace TuristickaAgencija.WinUI.Rezervacije
         }
         private async Task LoadTermini()
         {
-           
-            var result = await _termini.Get<List<Model.TerminiPutovanja>>(null);
+
+           var lista = await _termini.Get<List<Model.TerminiPutovanja>>(new
+           TerminiSearchRequest
+            {
+                Aktivno = true
+            });
+
+            var result = new List<Model.TerminiPutovanja>();
+            foreach (var i in lista)
+            {
+                if (i.DatumPolaska > DateTime.Now)
+                {
+                    result.Add(i);
+                }
+            }
+
             cmbTermini.DataSource = result;
             cmbTermini.DisplayMember = "TerminPutovanjaPodaci";
             cmbTermini.ValueMember = "TerminPutovanjaId";

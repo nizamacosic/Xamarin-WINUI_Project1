@@ -15,9 +15,12 @@ namespace TuristickaAgencija.WinUI.Novosti
     public partial class frmDetalji : Form
     {
         APIService _novosti = new APIService("Novosti");
-        APIService _putovanja= new APIService("Putovanja");
+        APIService _putovanja = new APIService("Putovanja");
+        APIService _zaposlenici = new APIService("Zaposlenici");
+        APIService _obavijesti = new APIService("Obavijesti");
+        APIService _pretplate = new APIService("Pretplate");
         private int? _id = null;
-        public frmDetalji(int?id=null)
+        public frmDetalji(int? id = null)
         {
             InitializeComponent();
             _id = id;
@@ -32,18 +35,18 @@ namespace TuristickaAgencija.WinUI.Novosti
             {
                 var novost = await _novosti.GetById<Model.Novosti>(_id);
                 txtNaslov.Text = novost.Naslov;
-                txtSadrzaj.Text= novost.Sadrzaj;
+                txtSadrzaj.Text = novost.Sadrzaj;
                 if (novost.Slika.Length > 0)
                 {
                     pictureBox1.Image = BytesToImage(novost.Slika);
                 }
-               if(novost.PutovanjeId.HasValue)
+                if (novost.PutovanjeId.HasValue)
                 {
                     var putovanje = await _putovanja.GetById<Model.Putovanja>(novost.PutovanjeId);
-                    cmbPutovanja.SelectedIndex = cmbPutovanja.FindStringExact(putovanje.Naziv);
+                    cmbPutovanja.SelectedIndex = cmbPutovanja.FindStringExact(putovanje.Putovanje);
                 }
                 dateTimePicker1.Value = DateTime.Now;
-                
+
             }
         }
 
@@ -55,12 +58,10 @@ namespace TuristickaAgencija.WinUI.Novosti
             cmbPutovanja.DataSource = result;
 
             cmbPutovanja.ValueMember = "PutovanjaId";
-            cmbPutovanja.DisplayMember = "Naziv";
+            cmbPutovanja.DisplayMember = "Putovanje";
         }
         public Image BytesToImage(byte[] arr)
         {
-
-
             MemoryStream ms = new MemoryStream(arr);
             return Image.FromStream(ms);
         }
@@ -80,25 +81,70 @@ namespace TuristickaAgencija.WinUI.Novosti
 
         private async void btnSnimi_MouseClick(object sender, MouseEventArgs e)
         {
+            var zID = 0;
+            var zaposlenici = await _zaposlenici.Get<List<Model.Zaposlenici>>(null);
+            foreach (var i in zaposlenici)
+            {
+                if (i.KorisnickoIme == APIService.KorisnickoIme)
+                {
+                    zID = i.ZaposlenikId;
+                    break;
+                }
+            }
+
             request.Naslov = txtNaslov.Text;
             request.Sadrzaj = txtSadrzaj.Text;
-            request.PutovanjeId =(int?)cmbPutovanja.SelectedValue;
+            if (cmbPutovanja.SelectedIndex > 0)
+            { 
+                request.PutovanjeId = (int?)cmbPutovanja.SelectedValue; 
+            }
             request.Slika = (System.Byte[])imageConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
             request.DatumVrijeme = DateTime.Now;
+            request.ZaposlenikId = zID;
 
             if (!_id.HasValue)
             {
                 await _novosti.Insert<Model.Novosti>(request);
+
+                //obavijest
+                if (request.PutovanjeId.HasValue)
+                {
+
+                    var putovanje = await _putovanja.GetById<Model.Putovanja>(request.PutovanjeId);
+
+                    var pretplate = await _obavijesti.Get<List<Model.Pretplate>>(new PretplateSearchRequest
+                    {
+                        VrstaPutovanjaId = putovanje.VrstaPutovanjaId
+                    });
+                    var novost = await _novosti.Get<List<Model.Novosti>>(new NovostiSearchRequest
+                    {
+                        ZaposlenikId = zID,
+                        Vrijeme = request.DatumVrijeme
+                    });
+
+                    foreach (var i in pretplate)
+                    {
+                        await _obavijesti.Insert<Model.Obavijesti>(new ObavijestiInsertRequest
+                        {
+                            IsProcitano = false,
+                            Vrijeme = DateTime.Now,
+                            NovostId = novost.FirstOrDefault().NovostId,
+                            PutnikKorisnikId = i.PutnikKorisnikId
+                        });
+                    }
+
+                }
             }
             else
             {
                 await _novosti.Update<Model.Novosti>(_id, request);
             }
-            if (this.ValidateChildren())
-            {
-                MessageBox.Show("Operacija uspjesna!");
-                this.Close();
+                if (this.ValidateChildren())
+                {
+                    MessageBox.Show("Operacija uspješna!");
+                    this.Close();
+                }
             }
         }
-    }
+    
 }

@@ -30,10 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvTermini = new System.Windows.Forms.DataGridView();
-            this.cmbPutovanja = new System.Windows.Forms.ComboBox();
-            this.btnTrazi = new System.Windows.Forms.Button();
-            this.btnNoviTermin = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.TerminPutovanjaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TerminPodaci = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PutovanjeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +40,10 @@
             this.BrojMjesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SmjestajId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Slika = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cmbPutovanja = new System.Windows.Forms.ComboBox();
+            this.btnTrazi = new System.Windows.Forms.Button();
+            this.btnNoviTermin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTermini)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             this.groupBox1.Controls.Add(this.dgvTermini);
             this.groupBox1.Location = new System.Drawing.Point(12, 118);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(847, 320);
+            this.groupBox1.Size = new System.Drawing.Size(872, 320);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -80,47 +80,6 @@
             this.dgvTermini.Size = new System.Drawing.Size(835, 257);
             this.dgvTermini.TabIndex = 0;
             this.dgvTermini.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvTermini_MouseDoubleClick);
-            // 
-            // cmbPutovanja
-            // 
-            this.cmbPutovanja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPutovanja.FormattingEnabled = true;
-            this.cmbPutovanja.Location = new System.Drawing.Point(18, 46);
-            this.cmbPutovanja.Name = "cmbPutovanja";
-            this.cmbPutovanja.Size = new System.Drawing.Size(335, 23);
-            this.cmbPutovanja.TabIndex = 1;
-            // 
-            // btnTrazi
-            // 
-            this.btnTrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrazi.Location = new System.Drawing.Point(359, 46);
-            this.btnTrazi.Name = "btnTrazi";
-            this.btnTrazi.Size = new System.Drawing.Size(75, 23);
-            this.btnTrazi.TabIndex = 2;
-            this.btnTrazi.Text = "Traži";
-            this.btnTrazi.UseVisualStyleBackColor = true;
-            this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
-            // 
-            // btnNoviTermin
-            // 
-            this.btnNoviTermin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNoviTermin.Location = new System.Drawing.Point(717, 37);
-            this.btnNoviTermin.Name = "btnNoviTermin";
-            this.btnNoviTermin.Size = new System.Drawing.Size(136, 40);
-            this.btnNoviTermin.TabIndex = 3;
-            this.btnNoviTermin.Text = "Novi termin";
-            this.btnNoviTermin.UseVisualStyleBackColor = true;
-            this.btnNoviTermin.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnNoviTermin_MouseClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Putovanje:";
             // 
             // TerminPutovanjaId
             // 
@@ -193,6 +152,47 @@
             this.Slika.HeaderText = "Slika";
             this.Slika.Name = "Slika";
             this.Slika.ReadOnly = true;
+            // 
+            // cmbPutovanja
+            // 
+            this.cmbPutovanja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPutovanja.FormattingEnabled = true;
+            this.cmbPutovanja.Location = new System.Drawing.Point(18, 46);
+            this.cmbPutovanja.Name = "cmbPutovanja";
+            this.cmbPutovanja.Size = new System.Drawing.Size(335, 23);
+            this.cmbPutovanja.TabIndex = 1;
+            // 
+            // btnTrazi
+            // 
+            this.btnTrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrazi.Location = new System.Drawing.Point(359, 46);
+            this.btnTrazi.Name = "btnTrazi";
+            this.btnTrazi.Size = new System.Drawing.Size(75, 23);
+            this.btnTrazi.TabIndex = 2;
+            this.btnTrazi.Text = "Traži";
+            this.btnTrazi.UseVisualStyleBackColor = true;
+            this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
+            // 
+            // btnNoviTermin
+            // 
+            this.btnNoviTermin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNoviTermin.Location = new System.Drawing.Point(717, 37);
+            this.btnNoviTermin.Name = "btnNoviTermin";
+            this.btnNoviTermin.Size = new System.Drawing.Size(136, 40);
+            this.btnNoviTermin.TabIndex = 3;
+            this.btnNoviTermin.Text = "Novi termin";
+            this.btnNoviTermin.UseVisualStyleBackColor = true;
+            this.btnNoviTermin.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnNoviTermin_MouseClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Putovanje:";
             // 
             // frmTermini
             // 

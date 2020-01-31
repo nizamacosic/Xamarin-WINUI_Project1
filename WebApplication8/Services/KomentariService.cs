@@ -27,7 +27,7 @@ namespace TuristickaAgencija.WebAPI.Services
                 query = query.Where(x => x.PutovanjeId == search.PutovanjeId);
 
             }
-            query = query.OrderBy(x => x.PutnikKorisnikId);
+            query = query.OrderByDescending(x => x.Vrijeme);
             var list = query.ToList();
             return _mapper.Map<List<Model.Komentari>>(list);
         }
