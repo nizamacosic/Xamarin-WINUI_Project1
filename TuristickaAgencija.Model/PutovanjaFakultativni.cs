@@ -8,7 +8,9 @@ namespace TuristickaAgencija.Model
     {
         public int PutovanjaFakultativniId { get; set; }
         public int PutovanjeId { get; set; }
+        public string Putovanje { get; set; }
         public int FakultativniIzletId { get; set; }
+        public string FakultativniIzlet { get; set; }
 
     }
 }

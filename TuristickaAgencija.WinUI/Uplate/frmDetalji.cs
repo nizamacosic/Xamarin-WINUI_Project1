@@ -59,7 +59,7 @@ namespace TuristickaAgencija.WinUI.Uplate
             {
                 await _uplate.Insert<Model.Uplate>(request);
             }
-            MessageBox.Show("Operacija uspjesna");
+            MessageBox.Show("Operacija uspješna");
             this.Close();
         }
 

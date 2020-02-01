@@ -47,7 +47,7 @@ namespace TuristickaAgencija.WinUI.Rezervacije
                     if ((termin.DatumPolaska - DateTime.Now).TotalDays > 3)
                     {
                     await _rezervacije.Delete<Model.Rezervacije>(id);
-
+                    MessageBox.Show("Rezervacija otkazana.");
                     }
                    else
                    {

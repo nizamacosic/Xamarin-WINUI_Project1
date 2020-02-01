@@ -72,9 +72,13 @@ namespace TuristickaAgencija.WebAPI.Mappers
 
             CreateMap<PutovanjaFakultativni, PutovanjaFakultativniInsertRequest>().ReverseMap();
             CreateMap<PutovanjaFakultativni, Model.PutovanjaFakultativni>().ReverseMap();
-
-
+            CreateMap<PutovanjaFakultativni, Model.PutovanjaFakultativni>().
+            ForMember(x => x.Putovanje, a => a.MapFrom(y => new MyContext().Putovanja.Find(y.PutovanjeId).Naziv)).
+            ForMember(x => x.FakultativniIzlet, a => a.MapFrom(y => new MyContext().FakultativniIzleti.Find(y.FakultativniIzletId).NazivIzleta)).ReverseMap();
             
+
+
+
             CreateMap<Rezervacije,Model.Rezervacije>().ReverseMap();
             CreateMap<Rezervacije,RezervacijeInsertRequest>().ReverseMap();
             CreateMap<Rezervacije, Model.Rezervacije>().ForMember(x => x.PutnikKorisnikPodaci

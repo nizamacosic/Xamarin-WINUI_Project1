@@ -30,12 +30,12 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvGradovi = new System.Windows.Forms.DataGridView();
-            this.txtPretragaNaziv = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnDodaj = new System.Windows.Forms.Button();
             this.GradID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NazivGrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PostanskiBroj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPretragaNaziv = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDodaj = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGradovi)).BeginInit();
             this.SuspendLayout();
@@ -62,9 +62,33 @@
             this.dgvGradovi.Name = "dgvGradovi";
             this.dgvGradovi.ReadOnly = true;
             this.dgvGradovi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGradovi.Size = new System.Drawing.Size(679, 198);
+            this.dgvGradovi.Size = new System.Drawing.Size(679, 250);
             this.dgvGradovi.TabIndex = 0;
             this.dgvGradovi.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvGradovi_MouseDoubleClick);
+            // 
+            // GradID
+            // 
+            this.GradID.DataPropertyName = "GradID";
+            this.GradID.HeaderText = "GradID";
+            this.GradID.Name = "GradID";
+            this.GradID.ReadOnly = true;
+            this.GradID.Visible = false;
+            // 
+            // NazivGrada
+            // 
+            this.NazivGrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NazivGrada.DataPropertyName = "NazivGrada";
+            this.NazivGrada.HeaderText = "Naziv grada";
+            this.NazivGrada.Name = "NazivGrada";
+            this.NazivGrada.ReadOnly = true;
+            // 
+            // PostanskiBroj
+            // 
+            this.PostanskiBroj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PostanskiBroj.DataPropertyName = "PostanskiBroj";
+            this.PostanskiBroj.HeaderText = "Poštanski broj";
+            this.PostanskiBroj.Name = "PostanskiBroj";
+            this.PostanskiBroj.ReadOnly = true;
             // 
             // txtPretragaNaziv
             // 
@@ -97,30 +121,6 @@
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // GradID
-            // 
-            this.GradID.DataPropertyName = "GradID";
-            this.GradID.HeaderText = "GradID";
-            this.GradID.Name = "GradID";
-            this.GradID.ReadOnly = true;
-            this.GradID.Visible = false;
-            // 
-            // NazivGrada
-            // 
-            this.NazivGrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NazivGrada.DataPropertyName = "NazivGrada";
-            this.NazivGrada.HeaderText = "Naziv grada";
-            this.NazivGrada.Name = "NazivGrada";
-            this.NazivGrada.ReadOnly = true;
-            // 
-            // PostanskiBroj
-            // 
-            this.PostanskiBroj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PostanskiBroj.DataPropertyName = "PostanskiBroj";
-            this.PostanskiBroj.HeaderText = "Poštanski broj";
-            this.PostanskiBroj.Name = "PostanskiBroj";
-            this.PostanskiBroj.ReadOnly = true;
-            // 
             // frmGradovi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,6 +132,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmGradovi";
             this.Text = "frmGradovi";
+            this.Load += new System.EventHandler(this.frmGradovi_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGradovi)).EndInit();
             this.ResumeLayout(false);

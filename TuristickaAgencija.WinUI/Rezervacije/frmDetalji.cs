@@ -48,7 +48,7 @@ namespace TuristickaAgencija.WinUI.Rezervacije
             var result = new List<Model.TerminiPutovanja>();
             foreach (var i in lista)
             {
-                if (i.DatumPolaska > DateTime.Now)
+                if ((i.DatumPolaska-DateTime.Now).TotalDays>3)
                 {
                     result.Add(i);
                 }
@@ -73,11 +73,31 @@ namespace TuristickaAgencija.WinUI.Rezervacije
             request.Vrijeme = dateTimePicker1.Value;
             if (_id.HasValue)
             {
-                await _rezervacije.Update<Model.Rezervacije>(_id,request);
+                await _rezervacije.Update<Model.Rezervacije>(_id, request);
             }
             else
             {
-                await _rezervacije.Insert<Model.Rezervacije>(request);
+                List<Model.Rezervacije> rezervacije = await _rezervacije.Get<List<Model.Rezervacije>>(new RezervacijeSearchRequest
+                {
+                    TerminId = (int?)cmbTermini.SelectedValue
+                });
+                var termin = await _termini.GetById<Model.TerminiPutovanja>((int?)cmbTermini.SelectedValue);
+                if (termin.BrojMjesta > rezervacije.Count)
+                {
+                    var postoji = false;
+                    foreach (var i in rezervacije)
+                    {
+                        if (i.PutnikKorisnikId == (int?)cmbPutniciKorisnici.SelectedValue)
+                        {
+                            postoji = true;
+                            break;
+                        }
+                    }
+                    if (!postoji)
+                    {
+                        await _rezervacije.Insert<Model.Rezervacije>(request);
+                    }
+                }
             }
             MessageBox.Show("Operacija uspješna");
             this.Close();

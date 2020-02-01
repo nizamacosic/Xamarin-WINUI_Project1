@@ -239,11 +239,7 @@ namespace TuristickaAgencija.WinUI
             frmRegistracija frm = new frmRegistracija(); frm.Show();
         }
 
-        private void dodajIzletNaPutovanjeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmPutovanjaIzleti frm = new frmPutovanjaIzleti();
-            frm.Show();
-        }
+   
 
         private void izvještajiToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -309,6 +305,21 @@ namespace TuristickaAgencija.WinUI
         private void noviVodičToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Vodici.frmDetalji frm = new Vodici.frmDetalji();
+            frm.Show();
+        }
+
+        private void dodajIzletToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPutovanjaIzleti frm = new frmPutovanjaIzleti();
+            frm.Show();
+        }
+
+        private void izletiIPutovanjaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIzletiPutovanja frm = new frmIzletiPutovanja();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+
             frm.Show();
         }
     }

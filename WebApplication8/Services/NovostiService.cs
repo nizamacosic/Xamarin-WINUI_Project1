@@ -30,7 +30,7 @@ namespace TuristickaAgencija.WebAPI.Services
             {
                 query = query.Where(x => x.DatumVrijeme == search.Vrijeme);
             }
-            query = query.OrderByDescending(x => x.DatumVrijeme);
+            query = query.OrderByDescending(x => x.NovostId);
             var list = query.ToList();
             return _mapper.Map<List<Model.Novosti>>(list);
         }

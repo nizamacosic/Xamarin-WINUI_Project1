@@ -14,6 +14,6 @@ namespace TuristickaAgencija.Model
         public string TerminPutovanjaPodaci { get; set; }
         public string PutovanjePodaci { get; set; }
 
-        public string RezervacijaPodaci { get { return "Putovanje:" + PutovanjePodaci + "-" + TerminPutovanjaPodaci +"| Putnik: "+PutnikKorisnikPodaci ; }}
+        public string RezervacijaPodaci { get { return "Putovanje:" + PutovanjePodaci + "-" + TerminPutovanjaPodaci + "| Putnik: " + PutnikKorisnikPodaci; }}
     }
 }

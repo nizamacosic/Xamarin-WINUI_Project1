@@ -45,9 +45,9 @@
             // btnDodaj
             // 
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodaj.Location = new System.Drawing.Point(416, 33);
+            this.btnDodaj.Location = new System.Drawing.Point(564, 33);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(301, 23);
+            this.btnDodaj.Size = new System.Drawing.Size(153, 23);
             this.btnDodaj.TabIndex = 15;
             this.btnDodaj.Text = "Novo putovanje";
             this.btnDodaj.UseVisualStyleBackColor = true;

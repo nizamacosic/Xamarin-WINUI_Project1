@@ -72,7 +72,7 @@
             this.dgvVrsta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVrsta.Size = new System.Drawing.Size(764, 326);
             this.dgvVrsta.TabIndex = 0;
-            this.dgvVrsta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVrsta_CellContentClick);
+            this.dgvVrsta.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVrsta_MouseDoubleClick);
             // 
             // VrstaPutovanjaId
             // 

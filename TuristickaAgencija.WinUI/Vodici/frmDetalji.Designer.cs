@@ -35,8 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtJMBG = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnSnimi = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSlika = new System.Windows.Forms.TextBox();
@@ -106,25 +104,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "JMBG";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(133, 198);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(219, 21);
-            this.txtEmail.TabIndex = 7;
-            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(78, 201);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Email";
-            // 
             // btnSnimi
             // 
             this.btnSnimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,7 +152,7 @@
             // txtTelefon
             // 
             this.txtTelefon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefon.Location = new System.Drawing.Point(133, 250);
+            this.txtTelefon.Location = new System.Drawing.Point(133, 180);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(219, 21);
             this.txtTelefon.TabIndex = 14;
@@ -183,11 +162,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(68, 253);
+            this.label5.Location = new System.Drawing.Point(46, 183);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.Size = new System.Drawing.Size(78, 16);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Telefon";
+            this.label5.Text = "Kontakt broj";
             // 
             // frmDetalji
             // 
@@ -200,8 +179,6 @@
             this.Controls.Add(this.txtSlika);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSnimi);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtJMBG);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPrezime);
@@ -227,8 +204,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtJMBG;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSnimi;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSlika;

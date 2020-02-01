@@ -34,8 +34,8 @@ namespace TuristickaAgencija.WinUI.Vodici
                     var vodic = await _vodici.GetById<Model.Vodici>(_id);
                     txtIme.Text = vodic.Ime;
                     txtPrezime.Text = vodic.Prezime;
-                    txtEmail.Text = vodic.Kontakt;
                     txtJMBG.Text = vodic.Jmbg;
+                    txtTelefon.Text = vodic.Kontakt;
                     
                 if (vodic.Slika.Length > 0)
                 { 
@@ -57,7 +57,7 @@ namespace TuristickaAgencija.WinUI.Vodici
             request.Ime = txtIme.Text;
             request.Prezime = txtPrezime.Text;
             request.Zauzet = false;
-            request.Kontakt = txtEmail.Text;
+            request.Kontakt = txtTelefon.Text;
             request.Jmbg = txtJMBG.Text;
             request.Slika = (System.Byte[])imageConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
 
@@ -166,25 +166,6 @@ namespace TuristickaAgencija.WinUI.Vodici
 
             }
         }
-        private void txtEmail_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtEmail.Text))
-            {
-                errorProvider1.SetError(txtEmail, "Ovo polje je obavezno.");
-                e.Cancel = true;
-            }
-            else if (!Regex.IsMatch(txtEmail.Text, @"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"))
-            {
-                errorProvider1.SetError(txtEmail, "Format email-a nije ispravan.");
-                e.Cancel = true;
-            }
-            else
-            {
-                errorProvider1.SetError(txtEmail, null);
-
-            }
-        }
-
 
         private void frmDetalji_FormClosing(object sender, FormClosingEventArgs e)
         {

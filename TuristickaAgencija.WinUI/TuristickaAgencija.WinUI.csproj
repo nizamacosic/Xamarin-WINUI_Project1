@@ -60,6 +60,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Putovanja\frmIzletiPutovanja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Putovanja\frmIzletiPutovanja.Designer.cs">
+      <DependentUpon>frmIzletiPutovanja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Termini\frmTerminiVodici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Putovanja\frmIzletiPutovanja.resx">
+      <DependentUpon>frmIzletiPutovanja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Termini\frmTerminiVodici.resx">
       <DependentUpon>frmTerminiVodici.cs</DependentUpon>

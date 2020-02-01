@@ -70,6 +70,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.dodajIzletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izletiIPutovanjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -111,21 +113,23 @@
             // novoPutovanjeToolStripMenuItem
             // 
             this.novoPutovanjeToolStripMenuItem.Name = "novoPutovanjeToolStripMenuItem";
-            this.novoPutovanjeToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.novoPutovanjeToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.novoPutovanjeToolStripMenuItem.Text = "Pregled i dodavanje";
             this.novoPutovanjeToolStripMenuItem.Click += new System.EventHandler(this.novoPutovanjeToolStripMenuItem_Click);
             // 
             // dodajIzletNaPutovanjeToolStripMenuItem
             // 
+            this.dodajIzletNaPutovanjeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajIzletToolStripMenuItem,
+            this.izletiIPutovanjaToolStripMenuItem});
             this.dodajIzletNaPutovanjeToolStripMenuItem.Name = "dodajIzletNaPutovanjeToolStripMenuItem";
-            this.dodajIzletNaPutovanjeToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.dodajIzletNaPutovanjeToolStripMenuItem.Text = "Dodaj izlet na putovanje";
-            this.dodajIzletNaPutovanjeToolStripMenuItem.Click += new System.EventHandler(this.dodajIzletNaPutovanjeToolStripMenuItem_Click);
+            this.dodajIzletNaPutovanjeToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.dodajIzletNaPutovanjeToolStripMenuItem.Text = "Izleti";
             // 
             // komentariIOcjeneToolStripMenuItem
             // 
             this.komentariIOcjeneToolStripMenuItem.Name = "komentariIOcjeneToolStripMenuItem";
-            this.komentariIOcjeneToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.komentariIOcjeneToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.komentariIOcjeneToolStripMenuItem.Text = "Komentari i ocjene";
             this.komentariIOcjeneToolStripMenuItem.Click += new System.EventHandler(this.komentariIOcjeneToolStripMenuItem_Click);
             // 
@@ -272,14 +276,14 @@
             // pregledToolStripMenuItem
             // 
             this.pregledToolStripMenuItem.Name = "pregledToolStripMenuItem";
-            this.pregledToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pregledToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.pregledToolStripMenuItem.Text = "Pretraga";
             this.pregledToolStripMenuItem.Click += new System.EventHandler(this.pregledToolStripMenuItem_Click);
             // 
             // noviVodičToolStripMenuItem
             // 
             this.noviVodičToolStripMenuItem.Name = "noviVodičToolStripMenuItem";
-            this.noviVodičToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noviVodičToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.noviVodičToolStripMenuItem.Text = "Novi vodič";
             this.noviVodičToolStripMenuItem.Click += new System.EventHandler(this.noviVodičToolStripMenuItem_Click);
             // 
@@ -411,6 +415,20 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // dodajIzletToolStripMenuItem
+            // 
+            this.dodajIzletToolStripMenuItem.Name = "dodajIzletToolStripMenuItem";
+            this.dodajIzletToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.dodajIzletToolStripMenuItem.Text = "Dodaj izlet na putovanje";
+            this.dodajIzletToolStripMenuItem.Click += new System.EventHandler(this.dodajIzletToolStripMenuItem_Click);
+            // 
+            // izletiIPutovanjaToolStripMenuItem
+            // 
+            this.izletiIPutovanjaToolStripMenuItem.Name = "izletiIPutovanjaToolStripMenuItem";
+            this.izletiIPutovanjaToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.izletiIPutovanjaToolStripMenuItem.Text = "Izleti i putovanja";
+            this.izletiIPutovanjaToolStripMenuItem.Click += new System.EventHandler(this.izletiIPutovanjaToolStripMenuItem_Click);
+            // 
             // frmIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,6 +494,8 @@
         private System.Windows.Forms.ToolStripMenuItem pretplateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pretragaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem vrstaPutovanjaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dodajIzletToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem izletiIPutovanjaToolStripMenuItem;
     }
 }
 

@@ -33,15 +33,14 @@
             this.btnNovi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvVodici = new System.Windows.Forms.DataGridView();
+            this.btnTrazi = new System.Windows.Forms.Button();
+            this.cbZauzet = new System.Windows.Forms.CheckBox();
             this.VodicID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kontakt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JMBG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Zauzet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Slika = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnTrazi = new System.Windows.Forms.Button();
-            this.cbZauzet = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVodici)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +85,6 @@
             this.Prezime,
             this.Kontakt,
             this.JMBG,
-            this.Zauzet,
             this.Slika});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -104,6 +102,28 @@
             this.dgvVodici.TabIndex = 0;
             this.dgvVodici.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvVodici_DataError);
             this.dgvVodici.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVodici_MouseDoubleClick);
+            // 
+            // btnTrazi
+            // 
+            this.btnTrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrazi.Location = new System.Drawing.Point(105, 34);
+            this.btnTrazi.Name = "btnTrazi";
+            this.btnTrazi.Size = new System.Drawing.Size(98, 23);
+            this.btnTrazi.TabIndex = 4;
+            this.btnTrazi.Text = "Traži";
+            this.btnTrazi.UseVisualStyleBackColor = true;
+            this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
+            // 
+            // cbZauzet
+            // 
+            this.cbZauzet.AutoSize = true;
+            this.cbZauzet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbZauzet.Location = new System.Drawing.Point(32, 36);
+            this.cbZauzet.Name = "cbZauzet";
+            this.cbZauzet.Size = new System.Drawing.Size(67, 20);
+            this.cbZauzet.TabIndex = 5;
+            this.cbZauzet.Text = "Zauzet";
+            this.cbZauzet.UseVisualStyleBackColor = true;
             // 
             // VodicID
             // 
@@ -134,7 +154,7 @@
             // 
             this.Kontakt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Kontakt.DataPropertyName = "Kontakt";
-            this.Kontakt.HeaderText = "Kontakt";
+            this.Kontakt.HeaderText = "Kontakt broj";
             this.Kontakt.Name = "Kontakt";
             this.Kontakt.ReadOnly = true;
             // 
@@ -146,14 +166,6 @@
             this.JMBG.Name = "JMBG";
             this.JMBG.ReadOnly = true;
             // 
-            // Zauzet
-            // 
-            this.Zauzet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Zauzet.DataPropertyName = "Zauzet";
-            this.Zauzet.HeaderText = "Zauzet";
-            this.Zauzet.Name = "Zauzet";
-            this.Zauzet.ReadOnly = true;
-            // 
             // Slika
             // 
             this.Slika.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -163,28 +175,6 @@
             this.Slika.ReadOnly = true;
             this.Slika.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Slika.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // btnTrazi
-            // 
-            this.btnTrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrazi.Location = new System.Drawing.Point(105, 34);
-            this.btnTrazi.Name = "btnTrazi";
-            this.btnTrazi.Size = new System.Drawing.Size(98, 23);
-            this.btnTrazi.TabIndex = 4;
-            this.btnTrazi.Text = "Traži";
-            this.btnTrazi.UseVisualStyleBackColor = true;
-            this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
-            // 
-            // cbZauzet
-            // 
-            this.cbZauzet.AutoSize = true;
-            this.cbZauzet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbZauzet.Location = new System.Drawing.Point(32, 36);
-            this.cbZauzet.Name = "cbZauzet";
-            this.cbZauzet.Size = new System.Drawing.Size(67, 20);
-            this.cbZauzet.TabIndex = 5;
-            this.cbZauzet.Text = "Zauzet";
-            this.cbZauzet.UseVisualStyleBackColor = true;
             // 
             // frmVodici
             // 
@@ -218,7 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kontakt;
         private System.Windows.Forms.DataGridViewTextBoxColumn JMBG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Zauzet;
         private System.Windows.Forms.DataGridViewImageColumn Slika;
     }
 }

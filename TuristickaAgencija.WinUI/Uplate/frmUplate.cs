@@ -29,19 +29,12 @@ namespace TuristickaAgencija.WinUI.Uplate
             cmbRezervacije.DisplayMember = "RezervacijaPodaci";
             cmbRezervacije.ValueMember = "RezervacijaId";
         }
-        private async Task LoadKorisnici()
-        {
-            var result = await _korisnici.Get<List<Model.PutniciKorisnici>>(null);
-            result.Insert(0, new Model.PutniciKorisnici());
-            cmbKorisnici.DataSource = result;
-            cmbKorisnici.DisplayMember = "KorisnickoIme";
-            cmbKorisnici.ValueMember = "PutnikKorisnikId";
-        }
+
 
         private async void frmUplate_Load(object sender, EventArgs e)
         {
             await LoadRezervacije();
-            await LoadKorisnici();
+          
             var result = await _uplate.Get<List<Model.Uplate>>(null);
             dgvUplate.AutoGenerateColumns = false;
             dgvUplate.DataSource = result;
@@ -49,15 +42,11 @@ namespace TuristickaAgencija.WinUI.Uplate
 
         private async void btnTrazi_Click(object sender, EventArgs e)
         {
-            var korisnikid = (int)cmbKorisnici.SelectedValue;
+         
             var rezid = (int)cmbRezervacije.SelectedValue;
             var search = new UplateSearchRequest();
 
-            if (int.TryParse(korisnikid.ToString(), out int _korisnikid))
-            {
-                search.PutnikKorisnikId = _korisnikid;
-                
-            }
+          
             if (int.TryParse(rezid.ToString(), out int _rezid))
             {
                 search.RezervacijaId = _rezid;

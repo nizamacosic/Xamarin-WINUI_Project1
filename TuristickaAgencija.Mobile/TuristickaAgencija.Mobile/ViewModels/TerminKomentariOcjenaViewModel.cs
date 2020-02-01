@@ -99,14 +99,18 @@ namespace TuristickaAgencija.Mobile.ViewModels
 
                 }
             }
-            await _serviceKomentari.Insert<Komentari>(new KomentariInsertRequest
+            if (KomentarSadrzaj.Length > 0)
             {
-                Sadrzaj = KomentarSadrzaj,
-                PutnikKorisnikId = putnikid,
-                Vrijeme = DateTime.Now,
-                PutovanjeId=Putovanje.PutovanjaId
+                await _serviceKomentari.Insert<Komentari>(new KomentariInsertRequest
+                {
+                    Sadrzaj = KomentarSadrzaj,
+                    PutnikKorisnikId = putnikid,
+                    Vrijeme = DateTime.Now,
+                    PutovanjeId = Putovanje.PutovanjaId
 
-            });
+                });
+            }
+            if(Ocjena!=null)
             await _serviceOcjene.Insert<OcjenePutovanja>(new OcjenePutovanjaInsertRequest
             {
                 PutnikKorisnikId = putnikid,

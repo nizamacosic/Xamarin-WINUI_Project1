@@ -52,7 +52,7 @@ namespace TuristickaAgencija.WinUI.Termini
                 if (entity.SmjestajId > 0)
                 {
                     var smjestaj = await _smjestaj.GetById<Model.Smjestaj>(entity.SmjestajId);
-                    cmbSmjestaj.SelectedIndex = cmbSmjestaj.FindStringExact(smjestaj.Naziv);
+                    cmbSmjestaj.SelectedIndex = cmbSmjestaj.FindStringExact(smjestaj.SmjestajPodaci);
                 }
                 if (entity.Aktivno == true)
                 {
@@ -68,7 +68,7 @@ namespace TuristickaAgencija.WinUI.Termini
             var result = await _smjestaj.Get<List<Model.Smjestaj>>(null);
 
             cmbSmjestaj.DataSource = result;
-            cmbSmjestaj.DisplayMember = "Naziv";
+            cmbSmjestaj.DisplayMember = "SmjestajPodaci";
             cmbSmjestaj.ValueMember = "SmjestajId";
         }
 

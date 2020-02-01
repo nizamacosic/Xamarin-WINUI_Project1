@@ -112,7 +112,7 @@ namespace TuristickaAgencija.WinUI.Putovanja
                     break;
                 }
             }
-            if(txtSlika.Text.Length>0)
+            
             request.Slika = (System.Byte[])imageConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
             
             if (!_id.HasValue)

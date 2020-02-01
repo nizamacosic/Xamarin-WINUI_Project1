@@ -48,5 +48,11 @@ namespace TuristickaAgencija.WinUI.Gradovi
             var result = await _apiService.Get<List<Model.Gradovi>>(search);
             dgvGradovi.DataSource = result;
         }
+
+        private async void frmGradovi_Load(object sender, EventArgs e)
+        {
+            var result = await _apiService.Get<List<Model.Gradovi>>(null);
+            dgvGradovi.DataSource = result;
+        }
     }
 }

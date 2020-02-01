@@ -24,6 +24,8 @@ namespace TuristickaAgencija.Mobile.ViewModels
             set { SetProperty(ref _rezervacijaOtkazi, value); }
         }
 
+    
+
         bool _rezervacijeMessage = false;
         public bool RezervacijeMessage
         {

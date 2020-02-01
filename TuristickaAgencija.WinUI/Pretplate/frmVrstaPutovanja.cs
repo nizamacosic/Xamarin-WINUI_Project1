@@ -31,7 +31,8 @@ namespace TuristickaAgencija.WinUI.Pretplate
             frm.Show();
         }
 
-        private void dgvVrsta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+   
+        private void dgvVrsta_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var id = dgvVrsta.SelectedRows[0].Cells[0].Value;
 

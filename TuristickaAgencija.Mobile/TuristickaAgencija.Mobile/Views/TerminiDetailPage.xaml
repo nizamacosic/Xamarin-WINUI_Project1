@@ -14,7 +14,7 @@
             <StackLayout Padding="10">
                 <Label Text="{Binding TerminPutovanja.TerminPutovanjaPodaci }"  HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Subtitle"></Label>
                 <Button Margin="0,10,0,0" Text="Rezerviši!" Clicked="Button_Clicked_1" BackgroundColor="Blue" TextColor="White" FontSize="16"></Button>
-                <Button Text="Ostavi komentar..." FontAttributes="Italic" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked"></Button>
+                <Button Text="Ostavi komentar ili ocjenu..." FontAttributes="Italic" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked"></Button>
 
                 <Image Source="{Binding TerminPutovanja.Slika,Converter={StaticResource imgConv}}"></Image>
                 <StackLayout Orientation="Vertical" IsVisible="{Binding OcjenaBool}">

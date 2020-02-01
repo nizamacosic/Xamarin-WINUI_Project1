@@ -151,14 +151,25 @@ namespace TuristickaAgencija.Mobile.ViewModels
           
             if (TerminPutovanja.BrojMjesta > rezervacije.Count)
             {
-                await _rezervacijeService.Insert<Rezervacije>(new RezervacijeInsertRequest
+                var postojivec = false;
+                foreach(var i in rezervacije)
                 {
-                    PutnikKorisnikId = putnikID,
-                    TerminPutovanjaId = TerminPutovanja.TerminPutovanjaId,
-                    Vrijeme = DateTime.Now
-                });
-                await Application.Current.MainPage.DisplayAlert("Vaš 'Bon Voyage'!", "Uspješno ste rezervisali putovanje, SRETAN PUT!", "OK");
-
+                    if(i.PutnikKorisnikId==putnikID)
+                    {
+                        postojivec = true;
+                        break;
+                    }
+                }
+                if (!postojivec)
+                {
+                    await _rezervacijeService.Insert<Rezervacije>(new RezervacijeInsertRequest
+                    {
+                        PutnikKorisnikId = putnikID,
+                        TerminPutovanjaId = TerminPutovanja.TerminPutovanjaId,
+                        Vrijeme = DateTime.Now
+                    });
+                    await Application.Current.MainPage.DisplayAlert("Vaš 'Bon Voyage'!", "Uspješno ste rezervisali putovanje, SRETAN PUT!", "OK");
+                }
             }
             else
             {
