@@ -127,11 +127,6 @@ namespace TuristickaAgencija.WebAPI.Database
                     .HasForeignKey(d => d.PutovanjeId)
                     .HasConstraintName("FK_Novosti_Putovanja");
 
-                entity.HasOne(d => d.VrstaPutovanja)
-                    .WithMany(p => p.Novosti)
-                    .HasForeignKey(d => d.VrstaPutovanjaId)
-                    .HasConstraintName("FK_Novosti_VrstePutovanja");
-
                 entity.HasOne(d => d.Zaposlenik)
                     .WithMany(p => p.Novosti)
                     .HasForeignKey(d => d.ZaposlenikId)

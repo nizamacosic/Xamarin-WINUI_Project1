@@ -11,7 +11,6 @@ namespace TuristickaAgencija.Model.Requests
         public string Sadrzaj { get; set; }
         public int? PutovanjeId { get; set; }
         public int? ZaposlenikId { get; set; }
-        public int? VrstaPutovanjaId { get; set; }
 
         public byte[] Slika { get; set; }
 

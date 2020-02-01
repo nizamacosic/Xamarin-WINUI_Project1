@@ -7,7 +7,6 @@ namespace TuristickaAgencija.WebAPI.Database
     {
         public VrstePutovanja()
         {
-            Novosti = new HashSet<Novosti>();
             Pretplate = new HashSet<Pretplate>();
             Putovanja = new HashSet<Putovanja>();
         }
@@ -16,7 +15,6 @@ namespace TuristickaAgencija.WebAPI.Database
         public string Oznaka { get; set; }
         public int? Vrijednost { get; set; }
 
-        public ICollection<Novosti> Novosti { get; set; }
         public ICollection<Pretplate> Pretplate { get; set; }
         public ICollection<Putovanja> Putovanja { get; set; }
     }

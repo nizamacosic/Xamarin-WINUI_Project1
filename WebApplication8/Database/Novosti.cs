@@ -17,10 +17,8 @@ namespace TuristickaAgencija.WebAPI.Database
         public int? PutovanjeId { get; set; }
         public int? ZaposlenikId { get; set; }
         public byte[] Slika { get; set; }
-        public int? VrstaPutovanjaId { get; set; }
 
         public Putovanja Putovanje { get; set; }
-        public VrstePutovanja VrstaPutovanja { get; set; }
         public Zaposlenici Zaposlenik { get; set; }
         public ICollection<Obavijesti> Obavijesti { get; set; }
     }

@@ -13,7 +13,7 @@ namespace TuristickaAgencija.Model
         public int? PutovanjeId { get; set; }
         public string Putovanje { get; set; }
         public int? ZaposlenikId { get; set; }
-        public int? VrstaPutovanjaId { get; set; }
+   
 
         public string Zaposlenik { get; set; }
         public byte[] Slika { get; set; }
