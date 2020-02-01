@@ -121,7 +121,7 @@ namespace TuristickaAgencija
             services.AddScoped<ICRUDService<Model.Obavijesti, ObavijestiSearchRequest, ObavijestiInsertRequest, ObavijestiInsertRequest>,
             ObavijestiService>();
 
-            var connection = @"Server=.;Database=160082;Trusted_Connection=True;";
+            var connection = @"data source=.;initial catalog=160082; integrated security = True; ";
             services.AddDbContext<MyContext>(options => options.UseSqlServer(connection));
 
 
