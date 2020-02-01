@@ -17,26 +17,26 @@
         <ScrollView BackgroundColor="White">
             <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" >
    
-                <StackLayout Padding="20">
+                <!--<StackLayout Padding="20">
 
-                    <Label Text="Moj profil" HorizontalOptions="Center"  FontSize="Subtitle"></Label>
 
-                </StackLayout>
+                </StackLayout>-->
                 <StackLayout  HorizontalOptions="FillAndExpand">
-                    <StackLayout>
-                        <Image Source="user.png" HeightRequest="150" WidthRequest="150"></Image>
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="user.png" HeightRequest="200" WidthRequest="200"></Image>
+                        <Label Text="MOJ PROFIL" HorizontalOptions="Center"  FontSize="Subtitle" FontAttributes="Italic"></Label>
 
                     </StackLayout>
 
-                    <StackLayout  HorizontalOptions="FillAndExpand" >
+                    <StackLayout  HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
 
                         <Label Text="Ime" FontAttributes="Italic"></Label>
-                       
-                        <Entry Text="{Binding Ime}" IsEnabled="False" TextColor="Black"></Entry>
+
+                        <Entry Text="{Binding Ime}" IsReadOnly="True" BackgroundColor="#8FAADC" TextColor="Black"></Entry>
                         
                         <Label Text="Prezime" FontAttributes="Italic"></Label>
 
-                        <Entry Text="{Binding Prezime}" IsReadOnly="True"  TextColor="Black" IsEnabled="False"></Entry>
+                        <Entry Text="{Binding Prezime}" IsReadOnly="True" BackgroundColor="#8FAADC"  TextColor="Black"></Entry>
 
                     </StackLayout>
                 </StackLayout>

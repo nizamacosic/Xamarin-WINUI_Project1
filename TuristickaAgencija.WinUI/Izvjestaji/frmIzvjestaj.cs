@@ -13,13 +13,13 @@ using TuristickaAgencija.Model.Requests;
 
 namespace TuristickaAgencija.WinUI.Izvjestaji
 {
-    public partial class frmIzvjestaj : Form
+    public partial class txtUkupno : Form
     {
         APIService _putovanja =new APIService("Putovanja");
         APIService _termini =new APIService("TerminiPutovanja");
         APIService _rezervacije =new APIService("Rezervacije");
 
-        public frmIzvjestaj()
+        public txtUkupno()
         {
             InitializeComponent();
         }
@@ -44,7 +44,8 @@ namespace TuristickaAgencija.WinUI.Izvjestaji
         {
             var putovanja = await _putovanja.Get<List<Model.Putovanja>>(null);
             List<IzvjestajPutovanjeGodina> lista = new List<IzvjestajPutovanjeGodina>();
-            
+         
+
             foreach (var i in putovanja)
             {
                 double zarada = 0;
@@ -56,8 +57,12 @@ namespace TuristickaAgencija.WinUI.Izvjestaji
                 {
                     var searchRezervacije = new RezervacijeSearchRequest { TerminId = j.TerminPutovanjaId };
                     var rezervacije = await _rezervacije.Get<List<Model.Rezervacije>>(searchRezervacije);
-                    brojRezervacija += rezervacije.Count();
-                    zarada += (double)j.Cijena * brojRezervacija;
+                    if (rezervacije.Count > 0)
+                    {
+                        brojRezervacija += rezervacije.Count();
+                        zarada += (double)j.Cijena * brojRezervacija;
+                        
+                    }
                 }
 
                 if (brojRezervacija > 0)
@@ -69,7 +74,9 @@ namespace TuristickaAgencija.WinUI.Izvjestaji
                         Putovanje = i.Putovanje,
                         Zarada = zarada
                     });
+
                 }
+              
             }
             dgvIzvjestaj.AutoGenerateColumns = false;
             lista.OrderByDescending(x=>x.Zarada);

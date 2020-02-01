@@ -79,6 +79,7 @@
             this.dgvTermini.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTermini.Size = new System.Drawing.Size(835, 257);
             this.dgvTermini.TabIndex = 0;
+            this.dgvTermini.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTermini_DataError);
             this.dgvTermini.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvTermini_MouseDoubleClick);
             // 
             // TerminPutovanjaId

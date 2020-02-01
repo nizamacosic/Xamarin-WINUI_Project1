@@ -247,7 +247,7 @@ namespace TuristickaAgencija.WinUI
 
         private void izvještajiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmIzvjestaj frm = new frmIzvjestaj();
+            txtUkupno frm = new txtUkupno();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
@@ -303,6 +303,12 @@ namespace TuristickaAgencija.WinUI
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
 
+            frm.Show();
+        }
+
+        private void noviVodičToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vodici.frmDetalji frm = new Vodici.frmDetalji();
             frm.Show();
         }
     }

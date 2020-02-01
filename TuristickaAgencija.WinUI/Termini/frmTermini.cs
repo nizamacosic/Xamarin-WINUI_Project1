@@ -20,6 +20,8 @@ namespace TuristickaAgencija.WinUI.Termini
         {
             InitializeComponent();
             _id = id;
+            this.dgvTermini.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTermini_DataError);
+
         }
 
         private async void frmTermini_Load(object sender, EventArgs e)
@@ -72,6 +74,11 @@ namespace TuristickaAgencija.WinUI.Termini
             frmDetalji frm = new frmDetalji(int.Parse(id.ToString()));
 
             frm.Show();
+        }
+
+        private void dgvTermini_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

@@ -90,11 +90,11 @@ namespace TuristickaAgencija.WinUI.Zaposlenici
                 errorProvider1.SetError(txtEmail, "Ovo polje je obavezno.");
                 e.Cancel = true;
             }
-            //else if (!Regex.IsMatch(txtEmail.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
-            //{
-            //    errorProvider1.SetError(txtEmail, "Pravilan format example@example.com");
-            //    e.Cancel = true;
-            //}
+            else if (!Regex.IsMatch(txtEmail.Text, @"[a - z0 - 9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"))
+            {
+                errorProvider1.SetError(txtEmail, "Pravilan format example@example.com");
+                e.Cancel = true;
+            }
             else
             {
                 errorProvider1.SetError(txtEmail, null);

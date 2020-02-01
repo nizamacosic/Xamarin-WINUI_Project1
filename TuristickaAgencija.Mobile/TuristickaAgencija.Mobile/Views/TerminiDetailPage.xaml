@@ -17,33 +17,33 @@
                 <Button Text="Ostavi komentar..." FontAttributes="Italic" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked"></Button>
 
                 <Image Source="{Binding TerminPutovanja.Slika,Converter={StaticResource imgConv}}"></Image>
-                <StackLayout Orientation="Horizontal" IsVisible="{Binding OcjenaBool}">
+                <StackLayout Orientation="Vertical" IsVisible="{Binding OcjenaBool}">
                     <Label Text="Ocjena korisnika:" Padding="5"></Label>
                     <Entry Text="{Binding Ocjena }" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
                 </StackLayout >
-                <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
-                    <Label Text="Vrijeme putovanja:"></Label>
+                <StackLayout Orientation="Vertical" Margin="0,20,0,0" >
+                    <Label Text="Vrijeme putovanja (OD-DO):"></Label>
                     <Entry Text="{Binding TerminPutovanja.DatumPolaska}" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
                     <Entry Text="{Binding TerminPutovanja.DatumPovratka }" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
                     <Label Text="Broj mjesta:" Padding="5"></Label>
                     <Entry Text="{Binding TerminPutovanja.BrojMjesta }" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
                 </StackLayout >
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Smjestaj" Padding="5"></Label>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Smještaj" Padding="5"></Label>
                     <Entry Text="{Binding TerminPutovanja.Smjestaj, StringFormat='Smjestaj: {0:F2} '}" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
 
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
                     <Label Text="Cijena:" Padding="5"></Label>
                     <Entry Text="{Binding TerminPutovanja.Cijena}" HorizontalOptions="FillAndExpand" IsReadOnly="True"></Entry>
                 </StackLayout>
            
 
                 <StackLayout >
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Vodici: " ></Label>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Vodiči: " ></Label>
                         <Entry Text="{Binding BrojVodica}" IsReadOnly="True"></Entry>
                     </StackLayout>
                     <Label Text="Izleti" FontSize="Subtitle" HorizontalOptions="Center"></Label>
@@ -55,7 +55,7 @@
                                 <ViewCell>
                                     <StackLayout Orientation="Vertical">
                                      
-                                        <StackLayout BackgroundColor="LightBlue" Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                        <StackLayout BackgroundColor="LightBlue" Padding="10" Margin="3" Orientation="Vertical" HorizontalOptions="FillAndExpand">
                                           
                                             <StackLayout Padding="5" HorizontalOptions="FillAndExpand">
                                                     <Label Text="Naziv: " FontSize="13"></Label>

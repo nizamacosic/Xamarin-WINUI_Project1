@@ -1,6 +1,6 @@
 ﻿namespace TuristickaAgencija.WinUI.Izvjestaji
 {
-    partial class frmIzvjestaj
+    partial class txtUkupno
     {
         /// <summary>
         /// Required designer variable.
@@ -119,7 +119,7 @@
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
             // 
-            // frmIzvjestaj
+            // txtUkupno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,7 +128,7 @@
             this.Controls.Add(this.dgvIzvjestaj);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbGodina);
-            this.Name = "frmIzvjestaj";
+            this.Name = "txtUkupno";
             this.Text = "frmIzvjestaj";
             this.Load += new System.EventHandler(this.frmIzvjestaj_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIzvjestaj)).EndInit();

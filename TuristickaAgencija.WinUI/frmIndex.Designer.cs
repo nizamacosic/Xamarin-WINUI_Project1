@@ -272,15 +272,16 @@
             // pregledToolStripMenuItem
             // 
             this.pregledToolStripMenuItem.Name = "pregledToolStripMenuItem";
-            this.pregledToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.pregledToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pregledToolStripMenuItem.Text = "Pretraga";
             this.pregledToolStripMenuItem.Click += new System.EventHandler(this.pregledToolStripMenuItem_Click);
             // 
             // noviVodičToolStripMenuItem
             // 
             this.noviVodičToolStripMenuItem.Name = "noviVodičToolStripMenuItem";
-            this.noviVodičToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.noviVodičToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.noviVodičToolStripMenuItem.Text = "Novi vodič";
+            this.noviVodičToolStripMenuItem.Click += new System.EventHandler(this.noviVodičToolStripMenuItem_Click);
             // 
             // smjestajToolStripMenuItem
             // 
@@ -359,14 +360,14 @@
             // pretragaToolStripMenuItem2
             // 
             this.pretragaToolStripMenuItem2.Name = "pretragaToolStripMenuItem2";
-            this.pretragaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.pretragaToolStripMenuItem2.Size = new System.Drawing.Size(167, 22);
             this.pretragaToolStripMenuItem2.Text = "Pretraga";
             this.pretragaToolStripMenuItem2.Click += new System.EventHandler(this.pretragaToolStripMenuItem2_Click);
             // 
             // vrstaPutovanjaToolStripMenuItem
             // 
             this.vrstaPutovanjaToolStripMenuItem.Name = "vrstaPutovanjaToolStripMenuItem";
-            this.vrstaPutovanjaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vrstaPutovanjaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.vrstaPutovanjaToolStripMenuItem.Text = "Vrsta putovanja";
             this.vrstaPutovanjaToolStripMenuItem.Click += new System.EventHandler(this.vrstaPutovanjaToolStripMenuItem_Click);
             // 
