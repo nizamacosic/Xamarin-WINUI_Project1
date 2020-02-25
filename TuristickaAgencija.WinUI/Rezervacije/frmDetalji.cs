@@ -84,19 +84,9 @@ namespace TuristickaAgencija.WinUI.Rezervacije
                 var termin = await _termini.GetById<Model.TerminiPutovanja>((int?)cmbTermini.SelectedValue);
                 if (termin.BrojMjesta > rezervacije.Count)
                 {
-                    var postoji = false;
-                    foreach (var i in rezervacije)
-                    {
-                        if (i.PutnikKorisnikId == (int?)cmbPutniciKorisnici.SelectedValue)
-                        {
-                            postoji = true;
-                            break;
-                        }
-                    }
-                    if (!postoji)
-                    {
+                   
                         await _rezervacije.Insert<Model.Rezervacije>(request);
-                    }
+                    
                 }
             }
             MessageBox.Show("Operacija uspješna");

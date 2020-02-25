@@ -50,6 +50,9 @@ namespace TuristickaAgencija.Mobile.Views
                     case (int)MenuItemType.MojProfil:
                         MenuPages.Add(id, new NavigationPage(new KorisnickiProfilPage()));
                         break;
+                    case (int)MenuItemType.Ispit:
+                        MenuPages.Add(id, new NavigationPage(new IspitPage()));
+                        break;
                     case (int)MenuItemType.Odjava:
                         MenuPages.Add(id, new NavigationPage(new OdjavaPage()));
                         break;

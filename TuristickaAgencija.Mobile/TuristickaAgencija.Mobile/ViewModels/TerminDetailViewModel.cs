@@ -151,17 +151,8 @@ namespace TuristickaAgencija.Mobile.ViewModels
           
             if (TerminPutovanja.BrojMjesta > rezervacije.Count)
             {
-                var postojivec = false;
-                foreach(var i in rezervacije)
-                {
-                    if(i.PutnikKorisnikId==putnikID)
-                    {
-                        postojivec = true;
-                        break;
-                    }
-                }
-                if (!postojivec)
-                {
+               
+                
                     await _rezervacijeService.Insert<Rezervacije>(new RezervacijeInsertRequest
                     {
                         PutnikKorisnikId = putnikID,
@@ -169,7 +160,7 @@ namespace TuristickaAgencija.Mobile.ViewModels
                         Vrijeme = DateTime.Now
                     });
                     await Application.Current.MainPage.DisplayAlert("Vaš 'Bon Voyage'!", "Uspješno ste rezervisali putovanje, SRETAN PUT!", "OK");
-                }
+                
             }
             else
             {
