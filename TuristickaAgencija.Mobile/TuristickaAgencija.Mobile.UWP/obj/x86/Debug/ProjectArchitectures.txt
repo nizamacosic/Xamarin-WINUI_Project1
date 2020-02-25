@@ -1,0 +1,1 @@
+C:\Users\User\Desktop\Project1\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile.UWP\TuristickaAgencija.Mobile.UWP.csproj;x86

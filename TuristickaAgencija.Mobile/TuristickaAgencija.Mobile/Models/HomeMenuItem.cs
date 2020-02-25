@@ -12,7 +12,7 @@ namespace TuristickaAgencija.Mobile.Models
         Uplate,
         MojProfil,
         About,
-        Ispit,
+      
         Odjava
 
     }

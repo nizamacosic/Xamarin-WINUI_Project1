@@ -1,0 +1,109 @@
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\TuristickaAgencija.Mobile.deps.json
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\TuristickaAgencija.Mobile.dll
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\ref\TuristickaAgencija.Mobile.dll
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\TuristickaAgencija.Mobile.pdb
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\TuristickaAgencija.Model.dll
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\TuristickaAgencija.Model.pdb
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AdminRezervacijePage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AdminUplatePage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AdminUplatePodaciPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AktivniTerminiPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AktuelneRezervacijePage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\IspitPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\KomentariPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\KomentarOcjenaDodajPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\KorisnickiProfilPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\KorisnickiProfilUrediPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MainPagePutnik.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MainPagePutnikDetail.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MainPagePutnikMaster.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MenuPagePutnik.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\NovostiDetailPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\NovostiDodajPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\NovostiPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\NovostiUrediPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\ObavijestiPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\OcjeneKomentariPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\OcjenePage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\OdjavaPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\PocetnaPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\PretplatePage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\PutnikNovostiPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\RegistracijaPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\RezervacijePage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\TerminiDetailPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\TerminiPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\TerminiUrediPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\TerminKomentariOcjenaPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\UplatePage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\UplatePodaciPage.xaml.g.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.AssemblyInfo.cs
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.csproj.CopyComplete
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.dll
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\ref\TuristickaAgencija.Mobile.dll
+C:\Users\User\Desktop\Turisticka Agencija\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.pdb
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\TuristickaAgencija.Mobile.deps.json
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\TuristickaAgencija.Mobile.dll
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\ref\TuristickaAgencija.Mobile.dll
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\TuristickaAgencija.Mobile.pdb
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\TuristickaAgencija.Model.dll
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\bin\Debug\netstandard2.0\TuristickaAgencija.Model.pdb
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AdminRezervacijePage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AdminUplatePage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AdminUplatePodaciPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AktivniTerminiPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\AktuelneRezervacijePage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\KomentariPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\KomentarOcjenaDodajPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\KorisnickiProfilPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\KorisnickiProfilUrediPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MainPagePutnik.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MainPagePutnikDetail.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MainPagePutnikMaster.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\MenuPagePutnik.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\NovostiDetailPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\NovostiDodajPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\NovostiPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\NovostiUrediPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\ObavijestiPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\OcjeneKomentariPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\OcjenePage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\OdjavaPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\PocetnaPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\PretplatePage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\PutnikNovostiPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\RegistracijaPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\RezervacijePage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\TerminiDetailPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\TerminiPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\TerminiUrediPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\TerminKomentariOcjenaPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\UplatePage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\Views\UplatePodaciPage.xaml.g.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.AssemblyInfo.cs
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.csproj.CopyComplete
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.dll
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\ref\TuristickaAgencija.Mobile.dll
+C:\Users\User\Desktop\Aplikacija za podršku rada turističke agencije\Turisticka Agencija App\TuristickaAgencija.Mobile\TuristickaAgencija.Mobile\obj\Debug\netstandard2.0\TuristickaAgencija.Mobile.pdb
