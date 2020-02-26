@@ -1,0 +1,13 @@
+MOBILE:
+
+Username: mobile
+Password: test
+
+
+
+DESKTOP i MOBILE:
+
+Username: desktop 
+Password: test
+
+
